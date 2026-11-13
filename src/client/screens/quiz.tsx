@@ -11,12 +11,13 @@ import { api, ApiFailure } from '../api'
 import { useLang, useLives, useMe, useRefreshAll } from '../hooks'
 import { useToast } from '../providers'
 import { QuizChart } from '../ui/charts'
-import { Flame, Gem, Heart, Icon } from '../ui/icons'
-import { ErrorState, PageSkeleton, Stars, Steps, TopBar } from '../ui/kit'
+import { Gem, Heart, Icon } from '../ui/icons'
+import { ErrorState, PageSkeleton, Steps, TopBar } from '../ui/kit'
 import { useGuard } from '../shell'
 import { ReportButton } from '../report-button'
 import { BadgeArt } from '../ui/badge'
 import { Lumi } from '../ui/lumi'
+import { Confetti, isStreakMilestone, StarsReveal, StreakFlame } from '../ui/celebrate'
 import { MaxCard } from '../upgrade'
 import { HelpTip } from '../ui/first-time'
 import { TryItNow } from '../missions'
@@ -301,18 +302,25 @@ export function QuizResult({ r, lessonId, review, testOut, onRetry, log = [] }: 
   const passed = r.stars > 0 || review
   const perfect = r.correct === r.total
   const secs = Math.round(r.durationMs / 1000)
+  // Racha que llega hoy a 7, 30 o 100 días: celebración especial (auditoría PRO-10)
+  const milestone = r.streak.extendedToday && isStreakMilestone(r.streak.days)
+  const big = perfect || milestone || !!r.levelUp
+  // «Lo que te llevas»: las ideas clave de la clase, que ya están en la caché de la lección (auditoría PRO-19)
+  const { data: lesson } = useQuery({ queryKey: ['lesson', lessonId], queryFn: () => api.lesson(lessonId!, true), enabled: !!lessonId && passed && !review && !testOut, staleTime: Infinity })
+  const takeaways = (lesson?.steps ?? []).flatMap(s => (s.type === 'TEXT' && s.keyIdea ? [s.keyIdea] : [])).slice(0, 3)
   return (
     <div className="pad min-h-[calc(100dvh-20px)] items-center pt-9 text-center">
+      {passed && <Confetti amount={big ? 140 : 70} />}
       <div className="animate-pop">
-        <Lumi mood={r.companion?.mood ?? (perfect ? 'CELEBRATE' : passed ? 'HAPPY' : 'CALM')} size={84} />
+        <Lumi mood={r.companion?.mood ?? (perfect ? 'CELEBRATE' : passed ? 'HAPPY' : 'CALM')} size={84} className={passed ? 'lumi-celebrate' : undefined} />
       </div>
       <h1 className="t-large">{testOut ? (passed ? t('testOutPassed') : t('testOutFailed')) : review ? t('reviewDone') : perfect ? t('perfect') : passed ? t('lessonDone') : t('almost')}</h1>
       {testOut && <p className="t-body m-0 max-w-[340px]">{passed ? t('testOutPassedBody') : t('testOutFailedBody')}</p>}
       {/* Suspendido: qué hacía falta para aprobar y qué hacer ahora */}
       {!testOut && !review && !passed && <p className="t-body m-0 max-w-[340px]">{t('failedBody', { pct: lessonId?.endsWith('boss') ? 80 : 60 })}</p>}
       {!review && (
-        <div aria-label={t('starsLabel', { n: r.stars })}>
-          <Stars n={r.stars} size={30} />
+        <div role="img" aria-label={t('starsLabel', { n: r.stars })}>
+          <StarsReveal n={r.stars} />
         </div>
       )}
       {r.companion && <p className="t-foot m-0 max-w-[340px]">{r.companion.message}</p>}
@@ -352,8 +360,32 @@ export function QuizResult({ r, lessonId, review, testOut, onRetry, log = [] }: 
       <HelpTip id="xp" title={t('xpWhatTitle')} className="w-full text-left">
         <span>{t('xpWhatBody')}</span>
       </HelpTip>
+      {milestone && (
+        <div className="hero milestone-in flex w-full items-center gap-3 text-left" role="status">
+          <StreakFlame grew size={44} />
+          <span className="flex-1">
+            <b className="t-head block">{t('milestoneTitle', { n: r.streak.days })}</b>
+            <span className="t-foot" style={{ color: 'inherit', opacity: 0.85 }}>
+              {t('milestoneBody')}
+            </span>
+          </span>
+        </div>
+      )}
+      {takeaways.length > 0 && (
+        <div className="card milestone-in flex w-full flex-col gap-2 text-left" style={{ animationDelay: '0.9s' }}>
+          <b className="t-head">{t('takeaways')}</b>
+          <ul className="m-0 flex list-none flex-col gap-1.5 p-0">
+            {takeaways.map(k => (
+              <li key={k} className="t-body flex gap-2">
+                <Icon name="check" size={18} className="mt-0.5 flex-none up" />
+                <span>{k}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       <div className="banner banner-info w-full justify-center">
-        <Flame /> {r.streak.extendedToday ? (r.streak.days === 1 ? t('streakStarted') : t('streakUp', { n: r.streak.days })) : t('dayStreak', { n: r.streak.days })}
+        <StreakFlame grew={r.streak.extendedToday} size={18} /> {r.streak.extendedToday ? (r.streak.days === 1 ? t('streakStarted') : t('streakUp', { n: r.streak.days })) : t('dayStreak', { n: r.streak.days })}
       </div>
       {r.goalsCompleted.map(g => (
         <div key={g} className="banner banner-info w-full justify-center">
@@ -576,9 +608,13 @@ function QuizInner({ id }: { id: string }) {
           </div>
         ) : reveal ? (
           <div className={`feedback ${reveal.correct ? 'ok' : 'bad'}`} aria-live="polite">
-            <b className={`${reveal.correct ? 'up animate-pop' : 'down'} inline-block self-start`} style={{ fontSize: 17 }}>
-              {reveal.correct ? (streak >= 2 ? t('correctStreak', { n: streak }) : t('correct')) : reveal.livesLeft !== null ? t('wrongLife', { n: reveal.livesLeft }) : t('wrong')}
-            </b>
+            {/* Lumi reacciona: celebra los aciertos (más con racha) y anima tras un fallo (auditoría PRO-26) */}
+            <span className="flex items-center gap-2.5">
+              <Lumi key={q.id} mood={reveal.scored === false ? 'THINKING' : reveal.correct ? (streak >= 3 ? 'CELEBRATE' : 'HAPPY') : 'CALM'} size={38} className={reveal.correct ? 'lumi-celebrate animate-pop' : 'animate-pop'} />
+              <b className={`${reveal.correct ? 'up animate-pop' : 'down'} inline-block`} style={{ fontSize: 17 }}>
+                {reveal.correct ? (streak >= 2 ? t('correctStreak', { n: streak }) : t('correct')) : reveal.livesLeft !== null ? t('wrongLife', { n: reveal.livesLeft }) : t('wrong')}
+              </b>
+            </span>
             {!reveal.correct && rightAnswer(q, reveal.correctAnswer) && (
               <span className="t-body">
                 <b>{t('rightAnswerIs')}</b> {rightAnswer(q, reveal.correctAnswer)}

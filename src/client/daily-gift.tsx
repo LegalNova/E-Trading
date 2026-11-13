@@ -12,6 +12,7 @@ import { useLang } from './hooks'
 import { useToast } from './providers'
 import { Gem, Heart, Icon } from './ui/icons'
 import { Sheet } from './ui/kit'
+import { Confetti, GiftBox } from './ui/celebrate'
 
 const MAX_FREEZES = 2
 const tint = (c: string, p = 14) => `color-mix(in srgb, ${c} ${p}%, var(--surface))`
@@ -123,9 +124,8 @@ function DailySheet({ open, onClose, d }: { open: boolean; onClose: () => void; 
         <Reveal r={result} onClose={close} />
       ) : !d.todayOpened ? (
         <div className="card flex flex-col items-center gap-3 py-6 text-center">
-          <span className="grid h-24 w-24 place-items-center rounded-[28px]" style={{ background: 'var(--brand)', color: 'var(--on-brand)', animation: m.isPending ? 'shake 0.4s ease-in-out infinite' : 'lumi-hop 1.8s ease-in-out infinite' }} aria-hidden="true">
-            <Icon name="gift" size={52} />
-          </span>
+          {/* La caja tiembla mientras se abre (auditoría PRO-10) */}
+          <GiftBox open={false} shaking={m.isPending} size={96} />
           <p className="t-body m-0">{chest ? t('chestBody', { total: d.total, gift: all(d.chest?.items ?? []) }) : today?.big ? t('cardBig') : t('cardBody', { gift: all(today?.items ?? []) })}</p>
           <button type="button" className="btn btn-primary" disabled={!d.canOpen || m.isPending} onClick={() => m.mutate()} aria-label={chest ? t('chestAria') : t('openAria', { n: d.day, total: d.total })}>
             {m.isPending ? t('opening') : chest ? t('chestOpen') : t('openGift')}
@@ -149,9 +149,9 @@ function Reveal({ r, onClose }: { r: DailyOpenT; onClose: () => void }) {
   const hasFreeze = r.items.some(x => x.kind === 'FREEZE')
   return (
     <div className="card flex flex-col items-center gap-3 py-5 text-center animate-pop" role="status">
-      <span className="grid h-20 w-20 place-items-center rounded-[24px]" style={{ background: tint('var(--brand)', 16), color: 'var(--brand-ink)', animation: 'glow-ok 0.9s ease-out 0.2s' }} aria-hidden="true">
-        <Icon name="gift" size={44} />
-      </span>
+      {/* La tapa salta, salen rayos de luz y confeti; más confeti los días grandes (auditoría PRO-10) */}
+      <Confetti amount={big || r.kind === 'CHEST' ? 140 : 70} />
+      <GiftBox open size={88} />
       <b className="t-head">{r.kind === 'CHEST' ? t('revealChest') : big ? t('revealBig', { n: r.day }) : t('revealTitle', { n: r.day })}</b>
       <ul className="m-0 flex w-full list-none flex-col gap-2 p-0 text-left">
         {r.items.map((x, i) => (

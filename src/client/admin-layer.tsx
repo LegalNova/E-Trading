@@ -79,9 +79,11 @@ function LensToggle() {
   return open ? (
     <LensPanel onClose={() => toggle(false)} />
   ) : (
-    <button onClick={() => toggle(true)} className="fixed bottom-[calc(150px+env(safe-area-inset-bottom))] left-3 z-50 flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[13px] font-bold shadow-lg md:right-5 md:bottom-5 md:left-auto" style={{ background: 'var(--ink)', color: 'var(--bg)' }} aria-label={t('open')}>
+    // En móvil, una pestañita pegada al borde derecho a media altura: no tapa los botones de abajo ni los paneles de
+    // respuesta (auditoría APP-36); en pantallas grandes, el botón de siempre abajo a la derecha
+    <button onClick={() => toggle(true)} className="fixed top-[42%] right-0 z-50 flex items-center gap-1.5 rounded-l-full py-2 pr-1.5 pl-2.5 text-[13px] font-bold shadow-lg md:top-auto md:right-5 md:bottom-5 md:rounded-full md:px-3.5" style={{ background: 'var(--ink)', color: 'var(--bg)' }} aria-label={t('open')}>
       <Icon name="chart" size={16} />
-      {t('button')}
+      <span className="hidden md:inline">{t('button')}</span>
     </button>
   )
 }
