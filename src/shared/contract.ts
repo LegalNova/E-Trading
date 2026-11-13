@@ -527,6 +527,8 @@ export const Settings = z.object({
   leagueVisible: z.boolean(),
   /** (+) Ruta del curso elegida (sin elegir: no viene) */
   route: RouteChoice.nullable().optional(),
+  /** (+) Sonido y vibración al acertar y al terminar una clase (auditoría PRO-13). Apagado si no viene */
+  sound: z.boolean().optional(),
 })
 export const BillingPlan = z.object({
   id: z.string(),

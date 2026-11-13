@@ -24,7 +24,7 @@
    "steps": [
     {
      "title": "Les paraules del mercat",
-     "body": "• **Acció:** una part d'una empresa.\n• **Dividend:** part del benefici que es reparteix entre els accionistes.\n• **Capitalització:** preu × nombre d'accions.\n• **Índex:** resumeix un grup d'empreses (IBEX 35, S&P 500).\n• **OPV:** venda al públic d'accions que ja existeixen; moltes empreses surten així a borsa.\n• **Bròker:** qui porta les teves ordres al mercat i custodia els teus valors."
+     "body": "• **Acció:** una part d'una empresa.\n• **Dividend:** part del benefici que es reparteix entre els accionistes.\n• **Capitalització:** preu × nombre d'accions.\n• **Índex:** resumeix un grup d'empreses (IBEX 35, S&P 500).\n• **OPV:** venda al públic d'accions que ja existeixen; moltes empreses surten així a borsa.\n• **Bròquer:** qui porta les teves ordres al mercat i custodia els teus valors."
     },
     {
      "title": "Comprar i vendre",
@@ -328,10 +328,10 @@
    "options": [
     "Índex",
     "Dividend",
-    "Bròker",
+    "Bròquer",
     "OPV"
    ],
-   "explanation": "Índex, dividend, bròker i OPV apareixen en gairebé qualsevol notícia de borsa.",
+   "explanation": "Índex, dividend, bròquer i OPV apareixen en gairebé qualsevol notícia de borsa.",
    "right": [
     "Qui porta la teva ordre al mercat",
     "Els propietaris venen les seves accions al públic",
@@ -350,12 +350,12 @@
   "vocabl2-8": {
    "prompt": "Ordena el que passa quan compres una acció.",
    "options": [
-    "El bròker l'envia al mercat",
+    "El bròquer l'envia al mercat",
     "Les accions queden custodiades a nom teu",
     "Es creua amb una ordre de venda",
-    "Dones l'ordre a l'app del bròker"
+    "Dones l'ordre a l'app del bròquer"
    ],
-   "explanation": "La teva ordre viatja al llibre d'ordres, es creua amb algú que ven i el bròker guarda les accions separades del seu propi patrimoni."
+   "explanation": "La teva ordre viatja al llibre d'ordres, es creua amb algú que ven i el bròquer guarda les accions separades del seu propi patrimoni."
   },
   "vocabl2-9": {
    "prompt": "Un actiu molt líquid es pot comprar i vendre en grans quantitats sense moure gaire el preu.",
@@ -538,7 +538,7 @@
    ],
    "lines": [
     "Paraula del dia: «palanquejament» 💪",
-    "És quan el bròker et deixa múscul per aixecar més diners. Tot són avantatges, oi?"
+    "És quan el bròquer et deixa múscul per aixecar més diners. Tot són avantatges, oi?"
    ]
   },
   "vocabl4-5": {
@@ -1190,7 +1190,7 @@
    "prompt": "Una entitat que ofereix inversions sense autorització és un…",
    "options": [
     "Xiringuito financer",
-    "Bròker low cost sense oficines",
+    "Bròquer low cost sense oficines",
     "Neobanc"
    ],
    "explanation": "La CNMV publica una llista d'advertiments amb els xiringuitos detectats."
@@ -1201,7 +1201,7 @@
     "Criptomonedes en una plataforma estrangera per més de 50.000 €",
     "Un compte bancari a Alemanya amb més de 50.000 €",
     "Bitcoins custodiats fora d'Espanya per més de 50.000 €",
-    "Accions en un bròker estranger per més de 50.000 €"
+    "Accions en un bròquer estranger per més de 50.000 €"
    ],
    "explanation": "El 720 és per a comptes, valors i immobles a l'estranger; el 721, per a criptomonedes custodiades fora d'Espanya.",
    "right": [

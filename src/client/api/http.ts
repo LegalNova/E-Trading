@@ -236,6 +236,7 @@ export const httpApi: Api = {
   adminUsers: q => get(`/admin/users${q ? `?q=${encodeURIComponent(q)}` : ''}`),
   adminAudit: () => get('/admin/audit'),
   adminContent: () => get('/admin/content'),
+  adminHotspots: () => get('/admin/hotspots'),
   adminLens: (path, range) => get(`/admin/lens?path=${encodeURIComponent(path)}&range=${range}`),
   adminLessons: range => get(`/admin/lessons?range=${range}`),
   adminUser: id => get(`/admin/users/${encodeURIComponent(id)}`),

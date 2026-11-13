@@ -487,7 +487,7 @@ export function Asset({ symbol }: { symbol: string }) {
                 </div>
               </div>
             ) : (
-              <div className="card t-foot">{tradable ? t('noPosition', { name: a.name }) : t('indexNote')}</div>
+              <div className="card t-foot">{tradable ? t('noPosition', { name: a.name.replace(/\.$/, '') }) : t('indexNote')}</div>
             )}
             <AboutAsset a={a} />
           </div>
@@ -495,7 +495,7 @@ export function Asset({ symbol }: { symbol: string }) {
         <Disclaimer />
       </div>
       {tradable && (
-        <div className="sticky bottom-[calc(80px+env(safe-area-inset-bottom))] z-20 grid grid-cols-2 gap-2.5 px-4 py-2.5 md:bottom-0" style={{ background: 'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)' }}>
+        <div className="buy-bar sticky bottom-[calc(var(--nav-space)+env(safe-area-inset-bottom))] z-20 grid grid-cols-2 gap-2.5 px-4 py-2.5 md:bottom-0" style={{ background: 'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)' }}>
           <button className="btn btn-secondary" disabled={!pos} onClick={() => setOrder('SELL')}>
             {t('sell')}
           </button>

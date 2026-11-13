@@ -1029,7 +1029,10 @@
     "toDark": "Dark mode",
     "manageSub": "Manage subscription (card, invoices, plan)",
     "error": "Something went wrong. Try again.",
-    "mobile": "Phone"
+    "mobile": "Phone",
+    "soundSection": "Sound and vibration",
+    "sound": "Sound and vibration",
+    "soundNote": "A short sound when you get it right and when you finish a lesson (and a gentle buzz on your phone)."
   },
   "account": {
     "title": "Account",
@@ -1268,7 +1271,18 @@
       "day": "day {n}",
       "wantsOther": "Asks for",
       "empty": "No comments yet."
-    }
+    },
+    "hotLessons": "Most abandoned lessons",
+    "hotLessonsNote": "Only lessons started by at least {min} people ({n} lessons with data). “Leaves at” is the average point in the lesson where people who don't finish drop out.",
+    "hotLesson": "Lesson",
+    "hotStarts": "Started",
+    "hotDone": "Finished",
+    "hotAbandon": "Abandoned",
+    "hotExitAt": "Leaves at",
+    "hotQuestions": "Most failed questions",
+    "hotQuestionsNote": "Only questions answered at least {min} times ({n} questions with answers). Start here to improve options and explanations.",
+    "hotAnswers": "{n} answers",
+    "hotEmpty": "Not enough data yet: it will show up as more people use the app."
   },
   "cookies": {
     "label": "Cookie notice",

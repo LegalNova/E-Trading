@@ -187,6 +187,62 @@ function Metrics({ onOpenUser, onOpenReports, onOpenMessages }: { onOpenUser: (i
   )
 }
 
+/** Las 20 clases que más se abandonan y las 50 preguntas que más se fallan (auditoría PRO-21) */
+function Hotspots() {
+  const t = useTranslations('admin')
+  const { data } = useQuery({ queryKey: ['admin-hotspots'], queryFn: api.adminHotspots })
+  if (!data) return null
+  return (
+    <div className="card flex flex-col gap-3">
+      <b className="t-head">{t('hotLessons')}</b>
+      <span className="t-cap">{t('hotLessonsNote', { min: data.minStarts, n: data.lessonsMeasured })}</span>
+      {data.lessons.length ? (
+        <div className="overflow-x-auto">
+          <table className="t-foot w-full min-w-[520px] text-left tabular-nums">
+            <thead>
+              <tr className="t-cap">
+                <th>{t('hotLesson')}</th>
+                <th>{t('hotStarts')}</th>
+                <th>{t('hotDone')}</th>
+                <th>{t('hotAbandon')}</th>
+                <th>{t('hotExitAt')}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.lessons.map(l => (
+                <tr key={l.id}>
+                  <td>
+                    <b style={{ color: 'var(--ink)' }}>{l.title}</b> <span className="t-cap">{l.id}</span>
+                  </td>
+                  <td>{l.starts}</td>
+                  <td>{l.completed}</td>
+                  <td className={l.abandonPct >= 50 ? 'down font-bold' : undefined}>{l.abandonPct} %</td>
+                  <td>{l.exitAtPct === null ? '—' : `${l.exitAtPct} %`}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <span className="t-foot">{t('hotEmpty')}</span>
+      )}
+      <b className="t-head mt-2">{t('hotQuestions')}</b>
+      <span className="t-cap">{t('hotQuestionsNote', { min: data.minAnswers, n: data.questionsMeasured })}</span>
+      {data.questions.length ? (
+        <ol className="m-0 flex flex-col gap-1.5 pl-5">
+          {data.questions.map(q => (
+            <li key={q.id} className="t-foot">
+              <b className="down">{q.failPct} %</b> · {q.prompt} <span className="t-cap">({q.id} · {t('hotAnswers', { n: q.answers })})</span>
+            </li>
+          ))}
+        </ol>
+      ) : (
+        <span className="t-foot">{t('hotEmpty')}</span>
+      )}
+    </div>
+  )
+}
+
 function Content() {
   const t = useTranslations('admin')
   const [sel, setSel] = useState('q-u2l3')
@@ -211,6 +267,7 @@ function Content() {
         ))}
       </div>
       <div className="flex flex-col gap-3">
+        <Hotspots />
         <div className="banner banner-info">{t('contentNote')}</div>
         {qs.map((q, i) => (
           <div key={q.id} className="card flex flex-col gap-1.5">

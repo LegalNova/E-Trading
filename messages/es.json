@@ -1029,7 +1029,10 @@
     "toDark": "Modo oscuro",
     "manageSub": "Gestionar suscripción (tarjeta, facturas, plan)",
     "error": "Algo no ha ido bien. Prueba otra vez.",
-    "mobile": "Móvil"
+    "mobile": "Móvil",
+    "soundSection": "Sonido y vibración",
+    "sound": "Sonido y vibración",
+    "soundNote": "Un sonido corto al acertar y al terminar una clase (y una vibración suave en el móvil)."
   },
   "account": {
     "title": "Cuenta",
@@ -1268,7 +1271,18 @@
       "day": "día {n}",
       "wantsOther": "Pide",
       "empty": "Aún no hay comentarios."
-    }
+    },
+    "hotLessons": "Clases que más se abandonan",
+    "hotLessonsNote": "Solo las que han empezado al menos {min} personas ({n} clases con datos). «Lo deja en» es el punto medio de la clase en que se sale quien no la acaba.",
+    "hotLesson": "Clase",
+    "hotStarts": "Empiezan",
+    "hotDone": "Terminan",
+    "hotAbandon": "Abandono",
+    "hotExitAt": "Lo deja en",
+    "hotQuestions": "Preguntas que más se fallan",
+    "hotQuestionsNote": "Solo las respondidas al menos {min} veces ({n} preguntas con respuestas). Empieza por aquí a mejorar opciones y explicaciones.",
+    "hotAnswers": "{n} respuestas",
+    "hotEmpty": "Aún no hay datos suficientes: aparecerán cuando más gente use la app."
   },
   "cookies": {
     "label": "Aviso de cookies",

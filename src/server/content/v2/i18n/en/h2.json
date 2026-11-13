@@ -432,14 +432,14 @@
   "u29l1-10": {
    "prompt": "Lumi has €300 in 15 cryptocurrencies and thinks her portfolio is already diversified. What do you reply?",
    "options": [
-    "Yes, especially if they're new",
     "Yes: with 15 different ones, they're unlikely to all fall at once",
+    "Yes, especially if they're new",
     "No: if they all fall together, it's like owning one"
    ],
    "explanation": "Highly correlated assets don't diversify. And remember: with crypto you can lose everything you put in.",
    "feedback": [
-    "The newest ones tend to be even more volatile. More names doesn't mean less risk.",
     "If only… but when bitcoin falls hard, most of the others fall with it.",
+    "The newest ones tend to be even more volatile. More names doesn't mean less risk.",
     "Well spotted! Diversifying means owning things that behave differently, not lots of names."
    ],
    "lines": [

@@ -34,6 +34,31 @@ function tabOf(path: string) {
   return TABS.find(t => path.startsWith(t.href))?.href ?? '/inicio'
 }
 
+/** En el móvil, la barra de abajo se esconde al bajar y vuelve al subir, para no tapar contenido (auditoría APP-30) */
+function useHideNavOnScroll() {
+  useEffect(() => {
+    let last = window.scrollY
+    let hidden = false
+    const root = document.documentElement
+    const onScroll = () => {
+      const y = window.scrollY
+      const atEnd = y + window.innerHeight >= document.documentElement.scrollHeight - 4
+      const next = y > 80 && y > last + 2 && !atEnd ? true : y < last - 2 || y <= 80 || atEnd ? false : hidden
+      if (next !== hidden) {
+        hidden = next
+        if (hidden) root.dataset.navHidden = ''
+        else delete root.dataset.navHidden
+      }
+      last = y
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      delete root.dataset.navHidden
+    }
+  }, [])
+}
+
 export function useGuard(require: 'app' | 'onboarding' | 'admin' = 'app') {
   const { data, isLoading } = useSession()
   const router = useRouter()
@@ -68,6 +93,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const t = useTranslations('nav')
   const { ready } = useGuard('app')
   usePrefetchTabs(ready)
+  useHideNavOnScroll()
 
   return (
     <div className="min-h-dvh md:flex">
@@ -112,7 +138,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <PendingGroupJoin />
       <TeamMessage />
       {/* Barra inferior flotante de cristal (estilo «liquid glass») */}
-      <nav aria-label={t('label')} className="glass fixed inset-x-3 z-30 rounded-[30px] p-1.5 md:hidden" style={{ bottom: 'max(10px, env(safe-area-inset-bottom))' }}>
+      <nav aria-label={t('label')} className="glass bottom-nav fixed inset-x-3 z-30 rounded-[30px] p-1.5 md:hidden" style={{ bottom: 'max(10px, env(safe-area-inset-bottom))' }}>
         <Suspense>
           <BottomLinks />
         </Suspense>

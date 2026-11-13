@@ -123,6 +123,15 @@ export interface AdminUserDetail {
   admin2: AdminUserControls
 }
 export interface AdminQuestion { id: string; type: string; prompt: string; options: string[]; solution: number | number[] | string; explanation: string }
+/** Dónde se atascan (auditoría PRO-21) */
+export interface AdminHotspots {
+  lessons: { id: string; title: string; unit: string; starts: number; completed: number; abandonPct: number; exitAtPct: number | null }[]
+  questions: { id: string; prompt: string; type: string; lessonId: string; answers: number; failPct: number }[]
+  minStarts: number
+  minAnswers: number
+  lessonsMeasured: number
+  questionsMeasured: number
+}
 export interface AdminContent { units: { id: string; order: number; title: string; lessons: { id: string; title: string; quizId: string }[] }[]; quizzes: Record<string, AdminQuestion[]>; achievements: number }
 // «Algo no está bien» y mandos del admin (admin2)
 export type ReportKind = 'CONTENT' | 'BUG' | 'MARKET' | 'OTHER'
@@ -332,6 +341,7 @@ export interface Api {
   adminUsers(q?: string): Promise<AdminUser[]>
   adminAudit(): Promise<AuditEntry[]>
   adminContent(): Promise<AdminContent>
+  adminHotspots(): Promise<AdminHotspots>
   adminLens(path: string, range: LensRange): Promise<Lens>
   adminLessons(range: LensRange): Promise<AdminLessonRow[]>
   adminUser(id: string): Promise<AdminUserDetail>

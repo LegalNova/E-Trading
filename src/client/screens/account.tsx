@@ -15,6 +15,7 @@ import { applyTheme, useToast } from '../providers'
 import { Icon } from '../ui/icons'
 import { ErrorState, PageSkeleton, Section, Seg, Toggle, TopBar } from '../ui/kit'
 import { Lumi } from '../ui/lumi'
+import { playFx } from '../ui/sound'
 import { BuyPlans, TestCardNote, usePlanBadge } from '../upgrade'
 import { PushToggle } from '../push'
 
@@ -521,6 +522,26 @@ export function Settings() {
         </div>
         <div className="list">
           <PushToggle />
+        </div>
+
+        <Section>{t('soundSection')}</Section>
+        <div className="list">
+          <div className="li plainline">
+            <span className="flex-1">
+              {t('sound')}
+              <br />
+              <span className="t-cap">{t('soundNote')}</span>
+            </span>
+            <Toggle
+              label={t('sound')}
+              checked={!!s.sound}
+              onChange={v => {
+                save.mutate({ sound: v })
+                // Al encenderlo se oye una muestra (y así el navegador deja sonar después)
+                if (v) playFx('right')
+              }}
+            />
+          </div>
         </div>
 
         <Section>{t('privacy')}</Section>

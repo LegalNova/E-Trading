@@ -1,8 +1,8 @@
 # 04 · Contenido
 
-> Estado: **curso completo en la app (octubre 2026).** 12 unidades, 108 lecciones y 395 preguntas a partir del manual `docs/curso` (D-048 a D-051). El esqueleto de la sección 4 queda como historia.
+> Estado (13-11-2026): **curso v2 en la app.** 39 unidades en 14 secciones, 288 clases (235 de contenido más repasos y retos finales) y 1.982 preguntas activas en los quizzes (las retiradas con `retire` ya no salen ni cuentan). Antes (octubre 2026) eran 12 unidades, 108 lecciones y 395 preguntas a partir del manual `docs/curso` (D-048 a D-051). El esqueleto de la sección 4 queda como historia.
 >
-> **Cómo añadir o cambiar una lección:** edita `src/server/content/course/uNN.ts` (pasos con `text`, `key`, `img`, `chart`, `sim`; preguntas con `single`, `tf`, `multi`, `order`, `fill`, `trend`, `point`) y ejecuta `npx tsx --conditions=react-server scripts/check-content.ts`. Si cambias el manual, regenera la base de Lumi con `npx tsx scripts/build-tutor-kb.ts`.
+> **Cómo añadir o cambiar una lección:** edita `src/server/content/v2/uNN.ts` (pasos `text`, `key`, `play`, `story`, `chart`…; preguntas con las funciones de `src/server/content/dsl.ts`). Una clase nueva va siempre **al final de su unidad** (los planes abren por posición) y no se cambian ids. Para quitar una pregunta se usa `retire`, nunca se borra. Después: `npm run check:content` y, si tocas textos, `npx tsx --conditions=react-server scripts/content-i18n.ts export` y `check` (catalán e inglés). Si cambias el manual, regenera la base de Lumi con `npx tsx scripts/build-tutor-kb.ts`.
 
 ## 1. Cómo se escribe una lección
 

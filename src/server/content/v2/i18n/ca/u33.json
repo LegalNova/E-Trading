@@ -1,12 +1,12 @@
 {
  "unit": {
   "title": "Triar on invertir",
-  "description": "Bròkers segurs, comissions, neobròkers i robo-advisors: com comparar sense caure en paranys",
+  "description": "Bròquers segurs, comissions, neobròquers i robo-advisors: com comparar sense caure en paranys",
   "section": "Espanya: impostos i estafes"
  },
  "lessons": {
   "u33l1": {
-   "title": "Com triar un bròker",
+   "title": "Com triar un bròquer",
    "steps": [
     {
      "texts": [
@@ -63,7 +63,7 @@
    ]
   },
   "u33l2": {
-   "title": "Les comissions d'un bròker",
+   "title": "Les comissions d'un bròquer",
    "steps": [
     {
      "texts": [
@@ -86,7 +86,7 @@
     {
      "texts": [
       "Barata o cara?",
-      "Vols posar **100 €** en un ETF i el bròker cobra **3 € fixos**. Molt o poc? Depèn del que compris: s'endú **menys de l'1 %** o **un 1 % o més**?",
+      "Vols posar **100 €** en un ETF i el bròquer cobra **3 € fixos**. Molt o poc? Depèn del que compris: s'endú **menys de l'1 %** o **un 1 % o més**?",
       "Menys de l'1 %",
       "Un 1 % o més",
       "3 € fixos en una compra de 10.000 €",
@@ -116,12 +116,12 @@
    ]
   },
   "u33l3": {
-   "title": "Neobròkers: com guanyen diners",
+   "title": "Neobròquers: com guanyen diners",
    "steps": [
     {
      "texts": [
       "Com guanya diners?",
-      "Un neobròker «sense comissions» guanya diners d'altres maneres. Quines creixen **com més operes**?",
+      "Un neobròquer «sense comissions» guanya diners d'altres maneres. Quines creixen **com més operes**?",
       "Guanya més si operes molt",
       "Guanya encara que no operis",
       "Spread en cada compravenda",
@@ -156,7 +156,7 @@
       "Canvia't a una altra app amb més premis",
       "Més premis, més empentes per operar.",
       "Amb un 0,2 % d'spread, són **480 € l'any**, encara que digui «0 € de comissió».",
-      "Un neobròker autoritzat pot ser una bona opció. Això sí, no deixis que decideixi quant operes.",
+      "Un neobròquer autoritzat pot ser una bona opció. Això sí, no deixis que decideixi quant operes.",
       "Prova-ho: obre el teu Historial i compta quantes operacions has fet aquest mes."
      ]
     },
@@ -269,7 +269,7 @@
  },
  "questions": {
   "u33l1-1": {
-   "prompt": "Ordena els criteris per triar un bròker, del primer a l'últim que hauries de mirar.",
+   "prompt": "Ordena els criteris per triar un bròquer, del primer a l'últim que hauries de mirar.",
    "options": [
     "Protecció si fa fallida",
     "Costos",
@@ -299,7 +299,7 @@
    "explanation": "Protegeix davant de fallades de l'entitat, no davant de l'evolució del mercat."
   },
   "u33l1-7": {
-   "prompt": "És més típic d'un bròker espanyol o d'un bròker estranger?",
+   "prompt": "És més típic d'un bròquer espanyol o d'un bròquer estranger?",
    "options": [
     "Et pot obligar a presentar el model 720",
     "La declaració de la renda surt gairebé feta",
@@ -308,8 +308,8 @@
    ],
    "explanation": "La comoditat fiscal també compta a l'hora de comparar.",
    "right": [
-    "Bròker espanyol",
-    "Bròker estranger"
+    "Bròquer espanyol",
+    "Bròquer estranger"
    ]
   },
   "u33l1-10": {
@@ -320,7 +320,7 @@
     "Passaport europeu",
     "Model 720"
    ],
-   "explanation": "Quatre paraules que t'ajuden a jutjar un bròker.",
+   "explanation": "Quatre paraules que t'ajuden a jutjar un bròquer.",
    "right": [
     "Fons que cobreix si una entitat no et torna el que és teu",
     "Permís per operar a Espanya estant autoritzat en un altre país de la UE",
@@ -371,14 +371,14 @@
   "u33l3-1": {
    "prompt": "Què és el pagament per flux d'ordres (PFOF)?",
    "options": [
-    "El que un intermediari paga al bròker per enviar-li les teves ordres",
+    "El que un intermediari paga al bròquer per enviar-li les teves ordres",
     "Un impost sobre les operacions",
-    "Una comissió que pagues tu al bròker en cada ordre"
+    "Una comissió que pagues tu al bròquer en cada ordre"
    ],
-   "explanation": "Per això un bròker pot anunciar compravenda a 0 € i, tot i així, guanyar amb les teves ordres."
+   "explanation": "Per això un bròquer pot anunciar compravenda a 0 € i, tot i així, guanyar amb les teves ordres."
   },
   "u33l3-3": {
-   "prompt": "De quines maneres pot guanyar diners un neobròker «sense comissions»? Marca-les totes.",
+   "prompt": "De quines maneres pot guanyar diners un neobròquer «sense comissions»? Marca-les totes.",
    "options": [
     "Amb ajudes públiques de la CNMV",
     "Amb una comissió fixa per cada compra",
@@ -388,7 +388,7 @@
    "explanation": "Amb el canvi de divisa i amb els interessos de l'efectiu que no et remunera; també prestant les teves accions, amb subscripcions, spreads i productes com cripto o CFD. No cobra comissió fixa per compra ni rep ajudes públiques."
   },
   "u33l3-8": {
-   "prompt": "El pagament per ____ d'ordres és el que un intermediari paga al bròker per enviar-li les teves ordres.",
+   "prompt": "El pagament per ____ d'ordres és el que un intermediari paga al bròquer per enviar-li les teves ordres.",
    "options": [
     "volum",
     "risc",
@@ -398,7 +398,7 @@
    "explanation": "En anglès, payment for order flow (PFOF)."
   },
   "u33l3-9": {
-   "prompt": "Què hauries de comprovar abans que res d'un neobròker?",
+   "prompt": "Què hauries de comprovar abans que res d'un neobròquer?",
    "options": [
     "Que no cobri comissions",
     "Que estigui autoritzat",

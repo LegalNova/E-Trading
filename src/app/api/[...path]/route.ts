@@ -61,6 +61,7 @@ const settings = z
     locale: z.enum(['es', 'ca', 'en']), currency: z.enum(['EUR', 'USD']), dailyGoalMinutes: z.union([z.literal(5), z.literal(10), z.literal(15), z.literal(20), z.literal(30)]), theme: z.enum(['AUTO', 'LIGHT', 'DARK']),
     gender: z.enum(['F', 'M', 'N']), notificationPrefs: z.record(z.string(), z.object({ inApp: z.boolean(), email: z.boolean(), push: z.boolean() })), name: z.string().max(30), companionName: z.string().max(14), skinId: z.enum(['azul', 'grafito', 'plata', 'hielo', 'menta', 'coral', 'lavanda', 'oro']), leagueVisible: z.boolean(),
     route: RouteChoice,
+    sound: z.boolean(),
   })
   .partial()
 const range = (req: NextRequest) => {
@@ -201,6 +202,7 @@ const routes: Route[] = [
   { method: 'GET', path: 'admin/users', run: r => admin.users(r.nextUrl.searchParams.get('q')?.slice(0, 100) || undefined) },
   { method: 'GET', path: 'admin/audit', run: () => admin.audit() },
   { method: 'GET', path: 'admin/content', run: () => admin.content() },
+  { method: 'GET', path: 'admin/hotspots', run: () => admin.hotspots() },
   { method: 'GET', path: 'admin/lens', run: async r => { await admin.requireAdmin(); return lens(r.nextUrl.searchParams.get('path')?.slice(0, 200) ?? '/', lensRange(r)) } },
   { method: 'GET', path: 'admin/lessons', run: async r => { await admin.requireAdmin(); return lessonTable(lensRange(r)) } },
   { method: 'GET', path: 'admin/users/:id', run: (_r, p) => admin.userDetail(p[0]) },

@@ -1029,7 +1029,10 @@
     "toDark": "Mode fosc",
     "manageSub": "Gestionar la subscripció (targeta, factures, pla)",
     "error": "Alguna cosa no ha anat bé. Torna-ho a provar.",
-    "mobile": "Mòbil"
+    "mobile": "Mòbil",
+    "soundSection": "So i vibració",
+    "sound": "So i vibració",
+    "soundNote": "Un so curt quan l'encertes i quan acabes una classe (i una vibració suau al mòbil)."
   },
   "account": {
     "title": "Compte",
@@ -1268,7 +1271,18 @@
       "day": "dia {n}",
       "wantsOther": "Demana",
       "empty": "Encara no hi ha comentaris."
-    }
+    },
+    "hotLessons": "Classes que més s'abandonen",
+    "hotLessonsNote": "Només les que han començat almenys {min} persones ({n} classes amb dades). «Ho deixa a» és el punt mitjà de la classe on surt qui no l'acaba.",
+    "hotLesson": "Classe",
+    "hotStarts": "Comencen",
+    "hotDone": "Acaben",
+    "hotAbandon": "Abandonament",
+    "hotExitAt": "Ho deixa a",
+    "hotQuestions": "Preguntes que més es fallen",
+    "hotQuestionsNote": "Només les respostes almenys {min} vegades ({n} preguntes amb respostes). Comença per aquí a millorar opcions i explicacions.",
+    "hotAnswers": "{n} respostes",
+    "hotEmpty": "Encara no hi ha prou dades: apareixeran quan més gent faci servir l'app."
   },
   "cookies": {
     "label": "Avís de galetes",

@@ -219,6 +219,56 @@ export async function content() {
   return { units: UNITS.map(u => ({ id: u.id, order: u.order, title: u.title, lessons: u.lessons.map(l => ({ id: l.id, title: l.title, quizId: l.quizId })) })), quizzes: QUIZZES, achievements: ACHIEVEMENTS.length }
 }
 
+// ── Dónde se atascan (auditoría PRO-21) ──────────────────
+// Con los datos que la app ya guarda: quién empieza cada clase (lesson_start), quién la termina (LessonProgress),
+// en qué paso la deja (lesson_exit) y cada respuesta de quiz (QuizAnswer). Nada inventado: si hay pocos datos, se dice.
+/** Mínimos para que un porcentaje signifique algo */
+export const HOTSPOT_MIN_STARTS = 5
+export const HOTSPOT_MIN_ANSWERS = 10
+
+export async function hotspots() {
+  await requireAdmin()
+  const [events, done, answers] = await Promise.all([
+    db.event.findMany({ where: { name: { in: ['lesson_start', 'lesson_exit'] } }, select: { name: true, userId: true, props: true }, orderBy: { createdAt: 'desc' }, take: 100_000 }),
+    db.lessonProgress.groupBy({ by: ['lessonId'], where: { skipped: false }, _count: { _all: true } }),
+    db.quizAnswer.groupBy({ by: ['questionId', 'correct'], where: { attempt: { mode: { not: 'PLACEMENT' } } }, _count: { _all: true } }),
+  ])
+  const starts = new Map<string, Set<string>>()
+  const exits = new Map<string, number[]>()
+  for (const e of events) {
+    const p = (e.props ?? {}) as { lessonId?: string; step?: number; of?: number }
+    if (!p.lessonId || !e.userId) continue
+    if (e.name === 'lesson_start') starts.set(p.lessonId, (starts.get(p.lessonId) ?? new Set()).add(e.userId))
+    else if (p.step && p.of) exits.set(p.lessonId, [...(exits.get(p.lessonId) ?? []), p.step / p.of])
+  }
+  const finished = new Map(done.map(d => [d.lessonId, d._count._all]))
+  const lessons = [...starts.entries()]
+    .map(([id, users]) => {
+      const n = users.size
+      const completed = Math.min(n, finished.get(id) ?? 0)
+      const ex = exits.get(id) ?? []
+      const l = LESSON[id]
+      return { id, title: l?.title ?? id, unit: l?.unit.title ?? '', starts: n, completed, abandonPct: n ? Math.round(((n - completed) / n) * 100) : 0, exitAtPct: ex.length ? Math.round((ex.reduce((a, x) => a + x, 0) / ex.length) * 100) : null }
+    })
+    .filter(x => x.starts >= HOTSPOT_MIN_STARTS)
+    .sort((a, b) => b.abandonPct - a.abandonPct || b.starts - a.starts)
+    .slice(0, 20)
+  const byQ = new Map<string, { ok: number; ko: number }>()
+  for (const a of answers) {
+    const x = byQ.get(a.questionId) ?? { ok: 0, ko: 0 }
+    if (a.correct) x.ok += a._count._all
+    else x.ko += a._count._all
+    byQ.set(a.questionId, x)
+  }
+  const ALL = Object.fromEntries(Object.values(QUIZZES).flat().map(q => [q.id, q]))
+  const questions = [...byQ.entries()]
+    .map(([id, x]) => ({ id, prompt: ALL[id]?.prompt ?? id, type: ALL[id]?.type ?? '', lessonId: id.replace(/-\d+$/, ''), answers: x.ok + x.ko, failPct: Math.round((x.ko / (x.ok + x.ko)) * 100) }))
+    .filter(x => x.answers >= HOTSPOT_MIN_ANSWERS && ALL[x.id])
+    .sort((a, b) => b.failPct - a.failPct || b.answers - a.answers)
+    .slice(0, 50)
+  return { lessons, questions, minStarts: HOTSPOT_MIN_STARTS, minAnswers: HOTSPOT_MIN_ANSWERS, lessonsMeasured: starts.size, questionsMeasured: byQ.size }
+}
+
 // ── Enlaces de campaña ───────────────────────────────────
 // Un enlace por sitio donde se comparte la app (?ref=nombre). Se cuentan visitas, altas, pruebas y pagos de cada uno.
 interface Campaign {

@@ -19,6 +19,7 @@ import { BadgeArt } from '../ui/badge'
 import { Lumi } from '../ui/lumi'
 import { Confetti, isStreakMilestone, StarsReveal, StreakFlame } from '../ui/celebrate'
 import { GEM_PRICES, HINT_TYPES } from '@/shared/gem-shop'
+import { useFx } from '../ui/sound'
 import { MaxCard } from '../upgrade'
 import { HelpTip } from '../ui/first-time'
 import { TryItNow } from '../missions'
@@ -370,6 +371,11 @@ export function QuizResult({ r, lessonId, review, testOut, onRetry, log = [] }: 
   // «Lo que te llevas»: las ideas clave de la clase, que ya están en la caché de la lección (auditoría PRO-19)
   const { data: lesson } = useQuery({ queryKey: ['lesson', lessonId], queryFn: () => api.lesson(lessonId!, true), enabled: !!lessonId && passed && !review && !testOut, staleTime: Infinity })
   const takeaways = (lesson?.steps ?? []).flatMap(s => (s.type === 'TEXT' && s.keyIdea ? [s.keyIdea] : [])).slice(0, 3)
+  // Sonido de clase terminada (solo si está activado en Ajustes)
+  const fx = useFx()
+  useEffect(() => {
+    if (passed) fx('done')
+  }, [passed, fx])
   return (
     <div className="pad min-h-[calc(100dvh-20px)] items-center pt-9 text-center">
       {passed && <Confetti amount={big ? 140 : 70} />}
@@ -530,6 +536,7 @@ function QuizInner({ id }: { id: string }) {
   // Pista con gemas (auditoría PRO-1): opciones tachadas de la pregunta actual
   const [struck, setStruck] = useState<number[]>([])
   const ts = useTranslations('shop')
+  const fx = useFx()
   const buyHint = useMutation({
     mutationFn: () => api.hint(start.data!.attemptId, start.data!.questions[i].id),
     onSuccess: r => (setStruck([r.removed]), refresh(), toast(ts('hintUsed'))),
@@ -552,6 +559,7 @@ function QuizInner({ id }: { id: string }) {
       setReveal(r)
       const q = start.data?.questions[i]
       if (q) setLog(l => [...l.filter(x => x.q.id !== q.id), { q, value: v, reveal: r }])
+      if (r.scored !== false) fx(r.correct ? 'right' : 'wrong')
       // La ronda de humildad ni suma ni corta la cadena de aciertos: no puntúa
       if (r.scored !== false) setStreak(n => (r.correct ? n + 1 : 0))
       if (r.livesLeft !== null) setLives(r.livesLeft)
