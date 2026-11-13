@@ -602,7 +602,7 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
                 ≈ {p ? fmtQty(p.qty, locale) : '—'} {unit(a.type, a.ticker)} · {fmtAssetPrice(a, locale)}
               </span>
               {/* El simulador no tiene horquilla ni deslizamiento: se dice aquí, donde se decide (auditoría APP-37) */}
-              <span className="t-cap text-center">{t('simNote')}</span>
+              <span className="t-cap mt-1 block text-center">{t('simNote')}</span>
             </div>
             <div className="grid grid-cols-4 gap-2.5">
               {[100, 500, 1000, 2500].map(v => (
