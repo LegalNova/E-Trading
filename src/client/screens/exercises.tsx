@@ -38,7 +38,7 @@ export function isAnswered(q: QuestionT, v: Value): boolean {
 
 const optClass = (reveal: AnswerResultT | null, isCorrect: boolean, isPicked: boolean) => (!reveal ? '' : isCorrect ? 'ok' : isPicked ? 'bad' : 'dim')
 
-export function DynamicExercise({ q, value, onChange, reveal }: { q: QuestionT; value: Value; onChange: (v: Value) => void; reveal: AnswerResultT | null }) {
+export function DynamicExercise({ q, value, onChange, reveal, struck }: { q: QuestionT; value: Value; onChange: (v: Value) => void; reveal: AnswerResultT | null; struck?: number[] }) {
   const t = useTranslations('quiz')
   const locale = useLang()
   const locked = !!reveal
@@ -300,7 +300,7 @@ export function DynamicExercise({ q, value, onChange, reveal }: { q: QuestionT; 
           <b className="t-head mt-1">{/(?:^|[.!?…:»]\s+)([^.!?…]*\?)\s*$/.exec(q.prompt)?.[1] ?? q.prompt}</b>
           <div className="flex flex-col items-end gap-2">
             {q.options.map((o, i) => (
-              <button key={i} className={`opt max-w-[88%] justify-end rounded-br-md text-right ${optClass(reveal, sol === i, value === i)}`} aria-pressed={value === i} disabled={locked} onClick={() => onChange(i)}>
+              <button key={i} className={`opt max-w-[88%] justify-end rounded-br-md text-right ${optClass(reveal, sol === i, value === i)} ${struck?.includes(i) ? 'line-through opacity-35' : ''}`} aria-pressed={value === i} disabled={locked || struck?.includes(i)} onClick={() => onChange(i)}>
                 {o}
               </button>
             ))}
@@ -313,7 +313,7 @@ export function DynamicExercise({ q, value, onChange, reveal }: { q: QuestionT; 
       return (
         <div className="flex flex-col gap-2.5">
           {q.options.map((o, i) => (
-            <button key={i} className={`opt ${optClass(reveal, sol === i, value === i)}`} aria-pressed={value === i} disabled={locked} onClick={() => onChange(i)}>
+            <button key={i} className={`opt ${optClass(reveal, sol === i, value === i)} ${struck?.includes(i) ? 'line-through opacity-35' : ''}`} aria-pressed={value === i} disabled={locked || struck?.includes(i)} onClick={() => onChange(i)}>
               <Icon name="chev" size={16} />
               {o}
             </button>

@@ -1,0 +1,38 @@
+{
+  "shop": {
+    "title": "Botiga de gemmes",
+    "balance": "Tens {n} gemmes",
+    "earn": "Les gemmes es guanyen aprenent: classes, ratxes, assoliments i el regal diari. Aquí no es paga amb diners.",
+    "cashTitle": "+{amount} de diners virtuals",
+    "cashBody": "Per practicar amb més diners al simulador. Entra com a aportació: no compta com a rendibilitat ni a la lliga.",
+    "cashLeft": "Te'n queden {n} aquest mes",
+    "cashNone": "Ja has fet servir les d'aquest mes",
+    "buy": "Canviar per {n} gemmes",
+    "bought": "Fet: tens {amount} més per practicar",
+    "skinsTitle": "Colors de la Lumi",
+    "skinUse": "Posar-l'hi",
+    "skinOn": "El porta posat",
+    "skinBought": "La Lumi estrena color!",
+    "hintTitle": "Pista en una pregunta",
+    "hintBody": "A les preguntes d'una sola resposta, treu una opció incorrecta. Apareix al costat de la pregunta.",
+    "livesTitle": "Vides",
+    "livesBody": "Si et quedes sense vides, les pots recuperar amb gemmes o repassant els teus errors.",
+    "plusNote": "Amb Plus tens vides il·limitades i més preguntes a la Lumi per 5,99 € al mes.",
+    "plusCta": "Veure plans",
+    "notEnough": "Et falten gemmes. Les guanyes fent classes i obrint el regal diari.",
+    "error": "No s'ha pogut fer. Torna-ho a provar.",
+    "open": "Botiga de gemmes",
+    "skins": {
+      "menta": "Menta",
+      "coral": "Corall",
+      "lavanda": "Lavanda",
+      "oro": "Or"
+    },
+    "hint": "Pista · {n}",
+    "hintAria": "Treure una opció incorrecta per {n} gemmes",
+    "hintUsed": "Pista feta servir: una opció incorrecta està ratllada",
+    "reviewLife": "Recupera una vida repassant els teus errors",
+    "reviewLifeBody": "Encerta almenys una pregunta del repàs i guanyes una vida, gratis.",
+    "lifeWon": "Has recuperat una vida!"
+  }
+}

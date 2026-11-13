@@ -241,6 +241,8 @@ export const QuizFinish = Effects.extend({
   durationMs: z.number(),
   xpBreakdown: z.object({ base: z.number(), perfectBonus: z.number(), speedBonus: z.number(), total: z.number() }),
   streak: z.object({ days: z.number(), extendedToday: z.boolean() }),
+  /** (+) Repaso de fallos con al menos un acierto, en el plan gratis y sin todas las vidas: gana una vida (auditoría PRO-7) */
+  lifeWon: z.boolean().optional(),
 })
 export const PlacementFinish = z.object({
   correct: z.number(),

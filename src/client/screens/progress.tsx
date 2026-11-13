@@ -375,10 +375,11 @@ export function Profile() {
           <b>{me.streak}</b>
           <span className="t-cap">{t('streakDays')}</span>
         </Link>
-        <div className="stat">
+        {/* Las gemas llevan a la tienda, donde se ve en qué se pueden gastar (auditoría PRO-1) */}
+        <Link href="/perfil/tienda" className="stat">
           <b>{num(me.gems, locale, 0)}</b>
-          <span className="t-cap">{t('gems')}</span>
-        </div>
+          <span className="t-cap">{t('gems')} ›</span>
+        </Link>
         <Link href="/clases" className="stat">
           <b>{me.lessonsCompleted}</b>
           <span className="t-cap">{t('lessons')}</span>
@@ -511,6 +512,7 @@ export function Notifications() {
 
 // ── Tu Lumi: el personaje crece con tu nivel ─────────────
 export function MyLumi() {
+  const ts = useTranslations('shop')
   const t = useTranslations('lumi')
   const qc = useQueryClient()
   const toast = useToast()
@@ -547,7 +549,12 @@ export function MyLumi() {
           <span className="t-foot">{nextAt ? t('next', { n: nextAt, name: t(`stages.${stage + 1}`) }) : t('max')}</span>
         </div>
         <div className="card flex flex-col gap-3">
-          <b className="t-head">{t('colorTitle')}</b>
+          <span className="flex items-center justify-between gap-2">
+            <b className="t-head">{t('colorTitle')}</b>
+            <Link href="/perfil/tienda" className="link text-sm">
+              {ts('open')} ›
+            </Link>
+          </span>
           <div className="grid grid-cols-4 gap-2.5">
             {SKINS.map(s => {
               const locked = me.level.n < s.unlockLevel

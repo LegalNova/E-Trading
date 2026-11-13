@@ -18,6 +18,7 @@ import { ReportButton } from '../report-button'
 import { BadgeArt } from '../ui/badge'
 import { Lumi } from '../ui/lumi'
 import { Confetti, isStreakMilestone, StarsReveal, StreakFlame } from '../ui/celebrate'
+import { GEM_PRICES, HINT_TYPES } from '@/shared/gem-shop'
 import { MaxCard } from '../upgrade'
 import { HelpTip } from '../ui/first-time'
 import { TryItNow } from '../missions'
@@ -30,12 +31,12 @@ const TIMEOUT = '__timeout__'
 const optClass = (reveal: AnswerResultT | null, isCorrect: boolean, isPicked: boolean) => (!reveal ? '' : isCorrect ? 'ok' : isPicked ? 'bad' : 'dim')
 
 /** Pinta cualquier tipo de pregunta. `reveal` muestra la solución tras responder. */
-export function QuestionView({ q, value, onChange, reveal }: { q: QuestionT; value: AnswerValue; onChange: (v: AnswerValue) => void; reveal: AnswerResultT | null }) {
+export function QuestionView({ q, value, onChange, reveal, struck }: { q: QuestionT; value: AnswerValue; onChange: (v: AnswerValue) => void; reveal: AnswerResultT | null; struck?: number[] }) {
   const t = useTranslations('quiz')
   const sol = reveal?.correctAnswer
   const locked = !!reveal
 
-  if (DYNAMIC.has(q.type)) return <DynamicExercise q={q} value={value} onChange={onChange} reveal={reveal} />
+  if (DYNAMIC.has(q.type)) return <DynamicExercise q={q} value={value} onChange={onChange} reveal={reveal} struck={struck} />
 
   if (q.type === 'CHART_POINT') {
     return (
@@ -125,7 +126,7 @@ export function QuestionView({ q, value, onChange, reveal }: { q: QuestionT; val
       )}
       <div className={row ? 'grid gap-2' : 'flex flex-col gap-2.5'} style={row ? { gridTemplateColumns: `repeat(${q.options.length}, 1fr)` } : undefined}>
         {q.options.map((o, i) => (
-          <button key={i} className={`opt ${row ? 'justify-center text-center' : ''} ${optClass(reveal, sol === i, value === i)}`} aria-pressed={value === i} disabled={locked} onClick={() => onChange(i)}>
+          <button key={i} className={`opt ${row ? 'justify-center text-center' : ''} ${optClass(reveal, sol === i, value === i)} ${struck?.includes(i) ? 'line-through opacity-35' : ''}`} aria-pressed={value === i} disabled={locked || struck?.includes(i)} onClick={() => onChange(i)}>
             {o}
           </button>
         ))}
@@ -165,6 +166,7 @@ export function useTypeHint() {
 
 // ── Sin vidas (03.8) ─────────────────────────────────────
 export function NoLives({ onClose }: { onClose?: () => void }) {
+  const ts = useTranslations('shop')
   const t = useTranslations('quiz')
   const toast = useToast()
   const refresh = useRefreshAll()
@@ -223,7 +225,18 @@ export function NoLives({ onClose }: { onClose?: () => void }) {
           <Gem /> {t('refill', { have: gems })}
         </button>
       )}
-      {out && mistakes > 0 && (
+      {/* Salida gratis: repasar fallos devuelve una vida (auditoría PRO-7) */}
+      {!premium && mistakes > 0 && (lives?.current ?? 0) < max && (
+        <Link href="/quiz/review" className="card flex items-center gap-3 text-left" style={{ color: 'inherit' }}>
+          <Heart />
+          <span className="flex-1">
+            <b className="block">{ts('reviewLife')}</b>
+            <span className="t-cap">{ts('reviewLifeBody')}</span>
+          </span>
+          <Icon name="chev" size={16} />
+        </Link>
+      )}
+      {out && mistakes > 0 && premium && (
         <Link href="/quiz/review" className="btn btn-plain">
           {t('reviewMistakes', { n: mistakes })}
         </Link>
@@ -299,6 +312,7 @@ export function QuizResult({ r, lessonId, review, testOut, onRetry, log = [] }: 
   const tg = useTranslations('goals')
   const locale = useLang()
   const { data: me } = useMe()
+  const ts = useTranslations('shop')
   const passed = r.stars > 0 || review
   const perfect = r.correct === r.total
   const secs = Math.round(r.durationMs / 1000)
@@ -360,6 +374,11 @@ export function QuizResult({ r, lessonId, review, testOut, onRetry, log = [] }: 
       <HelpTip id="xp" title={t('xpWhatTitle')} className="w-full text-left">
         <span>{t('xpWhatBody')}</span>
       </HelpTip>
+      {r.lifeWon && (
+        <div className="banner banner-info milestone-in w-full justify-center" role="status">
+          <Heart /> {ts('lifeWon')}
+        </div>
+      )}
       {milestone && (
         <div className="hero milestone-in flex w-full items-center gap-3 text-left" role="status">
           <StreakFlame grew size={44} />
@@ -460,6 +479,14 @@ function QuizInner({ id }: { id: string }) {
   const start = useQuery({ queryKey: ['quiz-start', id, run], queryFn: () => api.quizStart(id), staleTime: Infinity, gcTime: 0, retry: false, refetchOnWindowFocus: false })
   const [i, setI] = useState(0)
   const [value, setValue] = useState<AnswerValue>(null)
+  // Pista con gemas (auditoría PRO-1): opciones tachadas de la pregunta actual
+  const [struck, setStruck] = useState<number[]>([])
+  const ts = useTranslations('shop')
+  const buyHint = useMutation({
+    mutationFn: () => api.hint(start.data!.attemptId, start.data!.questions[i].id),
+    onSuccess: r => (setStruck([r.removed]), refresh(), toast(ts('hintUsed'))),
+    onError: e => toast(e instanceof ApiFailure && e.code === 'INSUFFICIENT_GEMS' ? ts('notEnough') : ts('error')),
+  })
   const [reveal, setReveal] = useState<AnswerResultT | null>(null)
   const [lives, setLives] = useState<number | null>(null)
   const [out, setOut] = useState(false)
@@ -518,6 +545,7 @@ function QuizInner({ id }: { id: string }) {
       setValue(null)
       setReveal(null)
       setLeft(null)
+      setStruck([])
     }
   }
 
@@ -592,8 +620,14 @@ function QuizInner({ id }: { id: string }) {
           </span>
         )}
         <div key={`${q.id}-${reveal ? (reveal.correct ? 'ok' : 'ko') : 'q'}`} className={reveal && !reveal.correct && reveal.scored !== false ? 'animate-shake' : undefined}>
-          <QuestionView key={q.id} q={q} value={value} onChange={pick} reveal={reveal} />
+          <QuestionView key={q.id} q={q} value={value} onChange={pick} reveal={reveal} struck={struck} />
         </div>
+        {/* Pista: solo en preguntas de una respuesta, antes de responder y una vez */}
+        {!reveal && HINT_TYPES.has(q.type) && q.options.length >= 3 && struck.length === 0 && (
+          <button className="chip self-start" onClick={() => buyHint.mutate()} disabled={buyHint.isPending} aria-label={ts('hintAria', { n: GEM_PRICES.hint })}>
+            <Gem /> {ts('hint', { n: GEM_PRICES.hint })}
+          </button>
+        )}
       </div>
       <div className="sticky bottom-0" style={{ background: 'var(--bg)' }}>
         {reveal && reveal.scored === false ? (

@@ -1,0 +1,38 @@
+{
+  "shop": {
+    "title": "Gem shop",
+    "balance": "You have {n} gems",
+    "earn": "Gems are earned by learning: lessons, streaks, achievements and the daily gift. Nothing here costs real money.",
+    "cashTitle": "+{amount} of virtual money",
+    "cashBody": "To practise with more money on the simulator. It goes in as a top-up: it doesn't count as returns or in the league.",
+    "cashLeft": "{n} left this month",
+    "cashNone": "You've used this month's",
+    "buy": "Swap for {n} gems",
+    "bought": "Done: you have {amount} more to practise with",
+    "skinsTitle": "Lumi's colours",
+    "skinUse": "Put it on",
+    "skinOn": "Wearing it",
+    "skinBought": "Lumi has a new colour!",
+    "hintTitle": "Hint on a question",
+    "hintBody": "On single-answer questions, it removes one wrong option. It appears next to the question.",
+    "livesTitle": "Lives",
+    "livesBody": "If you run out of lives, you can get them back with gems or by reviewing your mistakes.",
+    "plusNote": "With Plus you get unlimited lives and more questions for Lumi for €5.99 a month.",
+    "plusCta": "See plans",
+    "notEnough": "You don't have enough gems. You earn them by doing lessons and opening the daily gift.",
+    "error": "That didn't work. Please try again.",
+    "open": "Gem shop",
+    "skins": {
+      "menta": "Mint",
+      "coral": "Coral",
+      "lavanda": "Lavender",
+      "oro": "Gold"
+    },
+    "hint": "Hint · {n}",
+    "hintAria": "Remove one wrong option for {n} gems",
+    "hintUsed": "Hint used: one wrong option is crossed out",
+    "reviewLife": "Get a life back by reviewing your mistakes",
+    "reviewLifeBody": "Get at least one review question right and you win a life, for free.",
+    "lifeWon": "You've got a life back!"
+  }
+}

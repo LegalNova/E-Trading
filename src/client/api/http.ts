@@ -176,6 +176,10 @@ export const httpApi: Api = {
 
   streak: () => get('/streak'),
   buyStreakFreeze: () => post('/shop/streak-freeze'),
+  gemShop: () => get('/shop/gems'),
+  buyCash: () => post('/shop/cash'),
+  buySkin: (id: string) => post('/shop/skin', { id }),
+  hint: (attemptId: string, questionId: string) => post(`/quiz/attempts/${attemptId}/hint`, { questionId }),
   achievements: () => get('/achievements'),
   league: () => get('/league/current'),
   friendLeagues: () => get('/friends'),

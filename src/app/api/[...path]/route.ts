@@ -58,7 +58,7 @@ const draft = z
 const settings = z
   .object({
     locale: z.enum(['es', 'ca', 'en']), currency: z.enum(['EUR', 'USD']), dailyGoalMinutes: z.union([z.literal(5), z.literal(10), z.literal(15), z.literal(20), z.literal(30)]), theme: z.enum(['AUTO', 'LIGHT', 'DARK']),
-    gender: z.enum(['F', 'M', 'N']), notificationPrefs: z.record(z.string(), z.object({ inApp: z.boolean(), email: z.boolean(), push: z.boolean() })), name: z.string().max(30), companionName: z.string().max(14), skinId: z.enum(['azul', 'grafito', 'plata', 'hielo']), leagueVisible: z.boolean(),
+    gender: z.enum(['F', 'M', 'N']), notificationPrefs: z.record(z.string(), z.object({ inApp: z.boolean(), email: z.boolean(), push: z.boolean() })), name: z.string().max(30), companionName: z.string().max(14), skinId: z.enum(['azul', 'grafito', 'plata', 'hielo', 'menta', 'coral', 'lavanda', 'oro']), leagueVisible: z.boolean(),
     route: RouteChoice,
   })
   .partial()
@@ -100,6 +100,9 @@ const routes: Route[] = [
   { method: 'GET', path: 'me', run: () => profile.me() },
   { method: 'GET', path: 'me/lives', run: () => profile.lives() },
   { method: 'POST', path: 'me/lives/refill', run: () => profile.refillLives() },
+  { method: 'GET', path: 'shop/gems', run: () => profile.gemShop() },
+  { method: 'POST', path: 'shop/cash', run: () => profile.buyCash() },
+  { method: 'POST', path: 'shop/skin', run: (_r, _p, b) => profile.buySkin(z.object({ id: z.string().max(20) }).parse(b).id) },
   { method: 'GET', path: 'me/trading-stats', run: () => trading.tradingStats() },
   { method: 'GET', path: 'me/settings', run: () => profile.settings() },
   { method: 'PATCH', path: 'me/settings', run: (_r, _p, b) => profile.updateSettings(settings.parse(b)) },
@@ -112,6 +115,7 @@ const routes: Route[] = [
   { method: 'POST', path: 'quiz/:id/start', run: (_r, p) => learning.quizStart(p[0]) },
   { method: 'POST', path: 'quiz/attempts/:id/answer', run: async (_r, p, b) => { await rateLimit(`ans:${(await requireUser()).id}`, 120, 60); const x = z.object({ questionId: z.string().max(40), answer: z.union([z.number(), z.array(z.number()).max(12), z.string().max(60)]), elapsedMs: z.number() }).parse(b); return learning.answer(p[0], x.questionId, x.answer, x.elapsedMs) } },
   { method: 'POST', path: 'quiz/attempts/:id/finish', run: (_r, p) => learning.quizFinish(p[0]) },
+  { method: 'POST', path: 'quiz/attempts/:id/hint', run: (_r, p, b) => learning.hint(p[0], z.object({ questionId: z.string().max(40) }).parse(b).questionId) },
   { method: 'POST', path: 'quiz/attempts/:id/placement-finish', run: (_r, p) => learning.placementFinish(p[0]) },
   { method: 'GET', path: 'quiz/mistakes/count', run: () => profile.mistakesCount() },
   // Lumi, la profesora

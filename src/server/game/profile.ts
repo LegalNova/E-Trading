@@ -1,5 +1,6 @@
 import 'server-only'
 import { realName } from '@/shared/names'
+import { CASH_PACK, CASH_PACKS_PER_MONTH, GEM_PRICES, GEM_SKINS } from '@/shared/gem-shop'
 import { cleanSource, track, trackDaily } from './analytics'
 import { linkInviter, maybeRewardInvite } from './invites'
 import { priceOf, tierOf, TRIAL_DAYS, TRIAL_STREAK, trialUnlocked } from '@/shared/plans'
@@ -18,7 +19,7 @@ import { ACHIEVEMENTS, LESSON } from '../content/catalog'
 import { achievementList, endFx, fail, FREEZE_PRICE, goalDefs, goalsOf, minutesOf, levelOf, levelTitle, LIVES_MAX, livesOf, lumi, MAX_FREEZES, notify, REFILL_PRICE, START_CASH, withCtx, type Tx } from './core'
 import { pathOf, ROUTE_GRAPH, SCORED_IDS } from './learning'
 import { closure } from '@/shared/route'
-import { portfolioIn, portfolioRow, processPendingFor, userBook } from './trading'
+import { giveCash, portfolioIn, portfolioRow, processPendingFor, userBook } from './trading'
 import { addFlow } from './league'
 
 /** Clases de verdad del curso actual (226): las que cuentan como «clases hechas» en el perfil y en el inicio */
@@ -159,6 +160,8 @@ export const updateSettings = (patch: Partial<SettingsT> & { name?: string; comp
     const { name, companionName, skinId, ...rest } = patch
     // El color «hielo» se gana en el nivel 5 (también se comprueba aquí, no solo en la app)
     if (skinId === 'hielo' && levelOf(c.g.xp).n < 5) fail(403, 'FEATURE_LOCKED', 'Este color se desbloquea en el nivel 5')
+    // Los colores de la tienda de gemas, solo si ya se han comprado
+    if (skinId && GEM_SKINS.some(s => s.id === skinId) && !ownedSkins(c.user).includes(skinId)) fail(403, 'FEATURE_LOCKED', 'Este color se consigue con gemas en la tienda')
     const base = settingsOf(c.user)
     if (rest.notificationPrefs) rest.notificationPrefs = Object.fromEntries(Object.keys(base.notificationPrefs).map(k => [k, rest.notificationPrefs![k] ?? base.notificationPrefs[k]]))
     // La ruta se guarda ya coherente: lo elegido más lo que hace falta antes (el cliente también lo calcula, pero manda el servidor)
@@ -236,6 +239,47 @@ export const refillLives = () =>
     c.g.lives = LIVES_MAX
     c.g.livesUpdatedAt = new Date()
     return livesOf(c.user, c.g)
+  })
+
+// ── Tienda de gemas (auditoría PRO-1 y PRO-2): solo gemas ganadas, ningún pago con dinero ─────
+/** Colores de Lumi comprados con gemas (se guardan con los ajustes: sin cambios en la base de datos) */
+export const ownedSkins = (u: User): string[] => ((u.settings as { ownedSkins?: unknown } | null)?.ownedSkins as string[] | undefined)?.filter(x => typeof x === 'string') ?? []
+
+export const gemShop = () =>
+  withCtx(async c => {
+    const month = c.today.slice(0, 7)
+    const bought = (c.counters as { cashMonth?: string; cashBuys?: number }).cashMonth === month ? ((c.counters as { cashBuys?: number }).cashBuys ?? 0) : 0
+    return { gems: c.g.gems, prices: GEM_PRICES, cash: { amount: CASH_PACK, left: Math.max(0, CASH_PACKS_PER_MONTH - bought), perMonth: CASH_PACKS_PER_MONTH }, skins: GEM_SKINS.map(s => ({ ...s, owned: ownedSkins(c.user).includes(s.id) })) }
+  })
+
+/** +5.000 € de dinero virtual: entra como aportación (no cuenta como rentabilidad ni en la liga). Dos al mes. */
+export const buyCash = () =>
+  withCtx(async c => {
+    const month = c.today.slice(0, 7)
+    const k = c.counters as { cashMonth?: string; cashBuys?: number }
+    const bought = k.cashMonth === month ? (k.cashBuys ?? 0) : 0
+    if (bought >= CASH_PACKS_PER_MONTH) fail(409, 'LIMIT', `Como mucho ${CASH_PACKS_PER_MONTH} al mes`)
+    if (c.g.gems < GEM_PRICES.cash) fail(402, 'INSUFFICIENT_GEMS', `Necesitas ${GEM_PRICES.cash} gemas`)
+    c.g.gems -= GEM_PRICES.cash
+    await giveCash(c.tx, c.user, CASH_PACK)
+    Object.assign(c.counters, { cashMonth: month, cashBuys: bought + 1 })
+    await endFx(c)
+    return { gems: c.g.gems, left: CASH_PACKS_PER_MONTH - bought - 1 }
+  })
+
+/** Comprar un color de Lumi (y ponérselo) */
+export const buySkin = (id: string) =>
+  withCtx(async c => {
+    const skin = GEM_SKINS.find(s => s.id === id) ?? fail(404, 'NOT_FOUND', 'Color no encontrado')
+    const owned = ownedSkins(c.user)
+    if (!owned.includes(id)) {
+      if (c.g.gems < skin.price) fail(402, 'INSUFFICIENT_GEMS', `Necesitas ${skin.price} gemas`)
+      c.g.gems -= skin.price
+      owned.push(id)
+    }
+    await c.tx.user.update({ where: { id: c.user.id }, data: { skinId: id, settings: { ...((c.user.settings as object) ?? {}), ownedSkins: owned } } })
+    await endFx(c)
+    return { gems: c.g.gems, skinId: id }
   })
 
 // Fallos que toca repasar hoy (repaso espaciado), solo de preguntas que siguen en el curso

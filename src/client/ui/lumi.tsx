@@ -1,3 +1,4 @@
+import { GEM_SKINS } from '@/shared/gem-shop'
 // Lumi: un cubo de gelatina que te acompaña. El backend devuelve el estado de ánimo y aquí se dibuja la cara.
 // Con el nivel del alumno le van saliendo burbujitas de luz dentro (de 1 a 5).
 import type { Mood } from '@/shared/contract'
@@ -58,7 +59,7 @@ const BUBBLES: [number, number, number][] = [
 ]
 
 export function Lumi({ mood = 'HAPPY', size = 44, skin = 'azul', stage = 1, label = 'Lumi', className, animated = true }: { mood?: Mood; size?: number; skin?: string; stage?: number; label?: string; className?: string; animated?: boolean }) {
-  const fill = SKINS.find(s => s.id === skin)?.color ?? 'var(--lumi)'
+  const fill = SKINS.find(s => s.id === skin)?.color ?? GEM_SKINS.find(s => s.id === skin)?.color ?? 'var(--lumi)'
   const st = Math.min(5, Math.max(1, stage))
   return (
     <svg width={size} height={size} viewBox="0 0 48 48" role="img" aria-label={label} className={`lumi ${animated ? 'lumi-anim' : ''} lumi-${mood.toLowerCase()} ${className ?? ''}`} style={{ flex: 'none', overflow: 'visible' }}>

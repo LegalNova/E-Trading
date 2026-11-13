@@ -274,6 +274,10 @@ export interface Api {
   // Progreso
   streak(): Promise<StreakT>
   buyStreakFreeze(): Promise<StreakT>
+  gemShop(): Promise<GemShopT>
+  buyCash(): Promise<{ gems: number; left: number }>
+  buySkin(id: string): Promise<{ gems: number; skinId: string }>
+  hint(attemptId: string, questionId: string): Promise<{ removed: number; gems: number }>
   achievements(): Promise<AchievementT[]>
   league(): Promise<LeagueT>
   // Ligas de amigos
@@ -360,4 +364,12 @@ export interface Api {
   openDaily(): Promise<DailyOpenT>
   // Analítica propia (no bloquea nada si falla)
   trackEvent(e: { name: 'push_open'; kind: string } | { name: 'client_error'; message: string; path: string; stack?: string } | { name: 'screen_view'; path: string; ref?: string } | { name: 'lesson_exit'; lessonId: string; step: number; of: number }): void
+}
+
+/** Tienda de gemas (auditoría PRO-1): lo que se puede conseguir y lo que queda este mes */
+export interface GemShopT {
+  gems: number
+  prices: { hint: number; cash: number }
+  cash: { amount: number; left: number; perMonth: number }
+  skins: { id: string; color: string; price: number; owned: boolean }[]
 }

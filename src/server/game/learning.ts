@@ -4,6 +4,7 @@ import { isScored, tally } from '@/shared/scoring'
 import type { AnswerResultT, CoursePathT, LessonStepT, LessonT, PathUnitT, PlacementFinishT, QuestionT, QuizFinishT, QuizStartT, StepCheckT } from '@/shared/contract'
 import type { User } from '@/generated/prisma/client'
 import { walkTexts } from '@/shared/play'
+import { GEM_PRICES, HINT_TYPES } from '@/shared/gem-shop'
 import { closure, ordered, suggestedRoute, suggestedSections, type RouteChoice, type RouteUnit } from '@/shared/route'
 import { courseMinutes, lessonMinutes, LESSON, PLACEMENT, QUIZZES, RISK_LESSONS, UNITS, type ContentQuestion } from '../content/catalog'
 import { canOpen, FULL_UNIT_COUNT, minPlan } from '@/shared/plans'
@@ -269,6 +270,28 @@ async function attemptOf(c: Ctx, id: string) {
   return at!
 }
 
+/**
+ * Pista con gemas (auditoría PRO-1): quita una opción incorrecta de una pregunta de opción única aún sin responder.
+ * Devuelve qué opción (posición, tal como se ve) se tacha. Se elige siempre la misma para la misma pregunta.
+ */
+export const hint = (attemptId: string, questionId: string) =>
+  withCtx(async c => {
+    const at = await attemptOf(c, attemptId)
+    if (at.finishedAt) fail(409, 'CONFLICT', 'El quiz ya ha terminado')
+    if (!at.questionIds.includes(questionId)) fail(404, 'NOT_FOUND', 'Pregunta no encontrada')
+    if (at.answers.some(a => a.questionId === questionId)) fail(409, 'CONFLICT', 'Pregunta ya respondida')
+    const q = ALL_Q[questionId]
+    if (!q || !HINT_TYPES.has(q.type) || typeof q.solution !== 'number' || q.options.length < 3) fail(400, 'BAD_REQUEST', 'Esta pregunta no admite pista')
+    if (c.g.gems < GEM_PRICES.hint) fail(402, 'INSUFFICIENT_GEMS', `Necesitas ${GEM_PRICES.hint} gemas`)
+    c.g.gems -= GEM_PRICES.hint
+    const wrong = q.options.map((_, i) => i).filter(i => i !== q.solution)
+    let h = 0
+    for (const ch of questionId) h = (h * 31 + ch.charCodeAt(0)) >>> 0
+    const removed = wrong[h % wrong.length]
+    await endFx(c)
+    return { removed, gems: c.g.gems }
+  })
+
 export const answer = (attemptId: string, questionId: string, value: unknown, elapsedMs: number) =>
   withCtx(async (c): Promise<AnswerResultT> => {
     const at = await attemptOf(c, attemptId)
@@ -349,6 +372,15 @@ export const quizFinish = (attemptId: string) =>
     // El primer aprobado de una clase siempre da su XP (antes, quien había suspendido dos veces aprobaba a la tercera sin XP)
     const repeatsToday = at.lessonId ? await c.tx.quizAttempt.count({ where: { userId: c.user.id, lessonId: at.lessonId, finishedAt: { gte: new Date(Date.now() - 86_400_000) } } }) : 0
     const farming = at.mode === 'REVIEW' || lessonXp > 0 ? false : repeatsToday >= 2
+    // Auditoría PRO-7: quedarse sin vidas no obliga a pagar. Un repaso de fallos con al menos un acierto devuelve una
+    // vida en el plan gratis (como mucho tres al día, para que no sustituya a aprender clases)
+    const lifeDay = c.counters as { lifeDay?: string; lifeWins?: number }
+    const lifeWinsToday = lifeDay.lifeDay === c.today ? (lifeDay.lifeWins ?? 0) : 0
+    const lifeWon = at.mode === 'REVIEW' && c.user.plan === 'FREE' && correct > 0 && c.g.lives < LIVES_MAX && lifeWinsToday < 3
+    if (lifeWon) {
+      c.g.lives += 1
+      Object.assign(c.counters, { lifeDay: c.today, lifeWins: lifeWinsToday + 1 })
+    }
     const base = farming ? 0 : correct * 10 + lessonXp
     const perfectBonus = perfect && !farming ? Math.round(correct * 10 * 0.5) : 0
     const speedBonus = avgMs < 15_000 && correct > 0 && !farming ? Math.round(base * 0.1) : 0
@@ -377,7 +409,7 @@ export const quizFinish = (attemptId: string) =>
     }
     c.fx.companion = perfect ? lumi(c, 'QUIZ_PERFECT') : stars > 0 ? lumi(c, 'LESSON_COMPLETED', { concepto: l?.unit.title.toLowerCase() ?? 'inversión' }) : lumi(c, 'QUIZ_WRONG')
     const eff = await endFx(c)
-    const out: QuizFinishT = { ...eff, correct, total, stars, durationMs, xpBreakdown: { base, perfectBonus, speedBonus, total: base + perfectBonus + speedBonus }, streak: { days: c.g.streak, extendedToday } }
+    const out: QuizFinishT = { ...eff, correct, total, stars, durationMs, xpBreakdown: { base, perfectBonus, speedBonus, total: base + perfectBonus + speedBonus }, streak: { days: c.g.streak, extendedToday }, ...(lifeWon ? { lifeWon } : {}) }
     await c.tx.quizAttempt.update({ where: { id: at.id }, data: { finishedAt: new Date(), result: JSON.parse(JSON.stringify(out)) } })
     return out
   })

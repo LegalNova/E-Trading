@@ -1,0 +1,38 @@
+{
+  "shop": {
+    "title": "Tienda de gemas",
+    "balance": "Tienes {n} gemas",
+    "earn": "Las gemas se ganan aprendiendo: clases, rachas, logros y el regalo diario. Aquí no se paga con dinero.",
+    "cashTitle": "+{amount} de dinero virtual",
+    "cashBody": "Para practicar con más dinero en el simulador. Entra como aportación: no cuenta como rentabilidad ni en la liga.",
+    "cashLeft": "Te quedan {n} este mes",
+    "cashNone": "Ya has usado las de este mes",
+    "buy": "Cambiar por {n} gemas",
+    "bought": "Hecho: tienes {amount} más para practicar",
+    "skinsTitle": "Colores de Lumi",
+    "skinUse": "Ponérselo",
+    "skinOn": "Lo lleva puesto",
+    "skinBought": "¡Lumi estrena color!",
+    "hintTitle": "Pista en una pregunta",
+    "hintBody": "En las preguntas de una sola respuesta, quita una opción incorrecta. Aparece junto a la pregunta.",
+    "livesTitle": "Vidas",
+    "livesBody": "Si te quedas sin vidas, puedes recuperarlas con gemas o repasando tus fallos.",
+    "plusNote": "Con Plus tienes vidas ilimitadas y más preguntas a Lumi por 5,99 € al mes.",
+    "plusCta": "Ver planes",
+    "notEnough": "Te faltan gemas. Las ganas haciendo clases y abriendo el regalo diario.",
+    "error": "No se ha podido hacer. Inténtalo otra vez.",
+    "open": "Tienda de gemas",
+    "skins": {
+      "menta": "Menta",
+      "coral": "Coral",
+      "lavanda": "Lavanda",
+      "oro": "Oro"
+    },
+    "hint": "Pista · {n}",
+    "hintAria": "Quitar una opción incorrecta por {n} gemas",
+    "hintUsed": "Pista usada: una opción incorrecta está tachada",
+    "reviewLife": "Recupera una vida repasando tus fallos",
+    "reviewLifeBody": "Acierta al menos una pregunta del repaso y ganas una vida, gratis.",
+    "lifeWon": "¡Has recuperado una vida!"
+  }
+}
