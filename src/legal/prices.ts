@@ -3,6 +3,7 @@
 // tablas con las que se cobra (src/shared/plans.ts y src/shared/gifts.ts). tests/legal-prices.test.ts lo vigila.
 import { money } from '@/shared/format'
 import { GIFT_PRICE } from '@/shared/gifts'
+import { GEM_PACKS } from '@/shared/gem-shop'
 import { GROUP_CAP, GROUP_PRICES, GROUP_SIZES, PRICES, STUDENT_MONTHS, TRIAL_DAYS, TRIAL_STREAK, TUTOR_LIMITS, type BillingInterval, type GroupSize, type PaidTier } from '@/shared/plans'
 
 export type Lang = 'es' | 'ca' | 'en'
@@ -26,6 +27,14 @@ export const groupPrice = (size: GroupSize, tier: PaidTier, interval: BillingInt
 /** Precio de un regalo (pago único): 1 o 12 meses */
 export const giftPrice = (tier: PaidTier, months: 1 | 12, l: Lang) => eur(GIFT_PRICE[tier][months], l)
 
+/** Packs de gemas (auditoría PRO-3), de la misma tabla con la que se cobran: «500 gemas por 2,99 €, …» */
+export const gemPacksText = (l: Lang) => {
+  const word = { es: ['gemas', 'por', 'y'], ca: ['gemmes', 'per', 'i'], en: ['gems', 'for', 'and'] }[l]
+  const n = (x: number) => new Intl.NumberFormat(l === 'en' ? 'en-GB' : `${l}-ES`, { useGrouping: 'always' } as Intl.NumberFormatOptions).format(x)
+  const parts = GEM_PACKS.map(p => `${n(p.gems)} ${word[0]} ${word[1]} ${eur(p.eur, l)}`)
+  return `${parts.slice(0, -1).join(', ')} ${word[2]} ${parts[parts.length - 1]}`
+}
+
 /** Filas de la tabla de planes de grupo: tamaño · Plus al mes · Plus al año · Max al mes · Max al año */
 export const groupRows = (l: Lang, sizeLabel: (size: GroupSize) => string, student = false): string[][] =>
   GROUP_SIZES.map(size => [sizeLabel(size), groupPrice(size, 'PLUS', 'MONTH', l, student), groupPrice(size, 'PLUS', 'YEAR', l, student), groupPrice(size, 'PREMIUM', 'MONTH', l, student), groupPrice(size, 'PREMIUM', 'YEAR', l, student)])
@@ -39,5 +48,6 @@ export function allowedAmounts(): number[] {
   for (const table of [PRICES.normal, PRICES.student]) for (const tier of Object.values(table)) out.push(...Object.values(tier))
   for (const size of Object.values(GROUP_PRICES)) for (const tier of Object.values(size)) for (const iv of Object.values(tier)) out.push(iv.normal, iv.student)
   for (const tier of Object.values(GIFT_PRICE)) out.push(...Object.values(tier))
+  for (const p of GEM_PACKS) out.push(p.eur)
   return out
 }

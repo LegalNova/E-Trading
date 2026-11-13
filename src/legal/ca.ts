@@ -2,7 +2,7 @@
 // Els preus NO s'escriuen aquí: surten de ./prices (que llegeix les taules amb què es cobra).
 import { LEGAL_UPDATED_BY_LANG } from '@/shared/legal'
 import { OWNER } from './owner'
-import { giftPrice, groupRows, planPrice, RULES } from './prices'
+import { gemPacksText, giftPrice, groupRows, planPrice, RULES } from './prices'
 import type { LegalDoc, LegalSlug } from './types'
 
 const O = OWNER
@@ -209,7 +209,7 @@ export const ca: Record<LegalSlug, LegalDoc> = {
         ],
       },
       { h: '5. Conseqüències', p: ['Si s’incompleixen aquestes condicions podem corregir el progrés o les recompenses obtingudes indegudament, reiniciar la cartera virtual, suspendre o tancar el compte. T’ho explicarem i podràs respondre.'] },
-      { h: '6. XP, gemmes, vides i assoliments', p: ['Són elements del joc, sense valor econòmic. No es poden comprar amb diners, vendre, transferir ni bescanviar per diners o premis. En podem ajustar el funcionament per millorar l’aprenentatge.'] },
+      { h: '6. XP, gemmes, vides i assoliments', p: ['Són elements del joc, sense valor econòmic fora de l’app. Les gemmes es guanyen aprenent i, quan la botiga de gemmes estigui oberta, també es poden aconseguir en packs de pagament (condicions de contractació, apartat 15). Cap no es pot vendre, transferir ni bescanviar per diners o premis. En podem ajustar el funcionament per millorar l’aprenentatge.'] },
       {
         h: '7. Plans de pagament (Plus i Max)',
         list: [
@@ -373,6 +373,17 @@ export const ca: Record<LegalSlug, LegalDoc> = {
           'Dret de desistiment: tens 14 dies naturals des de la compra per desistir, sempre que el regal no s’hagi bescanviat. Et retornem l’import complet pel mateix mitjà de pagament i l’enllaç deixa de funcionar. Escriu-nos a ' + O.email + ' amb el correu del teu compte.',
           'Un cop bescanviat, el regal ja s’ha gaudit i no es pot retornar, perquè el servei comença a prestar-se en aquell moment amb el consentiment de qui el bescanvia.',
           'Per comprar un regal entre els 14 i els 17 anys cal la confirmació de la teva mare, el teu pare o el teu tutor, com a l’apartat 10.',
+        ],
+      },
+      {
+        h: '15. Packs de gemmes',
+        p: ["Pendent de revisió de l'advocat. Aquest apartat només s'aplica quan la botiga de gemmes estigui oberta."],
+        list: [
+          "Les gemmes són una moneda virtual per fer servir dins d'E-Trading: pistes, colors de la Lumi, diners virtuals per practicar i altres usos que s'expliquen a la botiga. No tenen valor fora de l'app, no es poden vendre, transferir ni canviar per diners.",
+          `Packs, amb impostos inclosos: ${gemPacksText('ca')}. És un pagament únic amb targeta a través de Stripe; no és una subscripció. El preu en euros es mostra sempre abans de pagar.`,
+          "Només poden comprar gemmes les persones majors de 18 anys.",
+          "Dret de desistiment: tens 14 dies naturals des de la compra per desistir de les gemmes que no hagis gastat. Et tornem la part proporcional pel mateix mitjà de pagament. Escriu-nos a " + O.email + ".",
+          "Les gemmes que ja has gastat es consideren gaudides i no es tornen, perquè el servei es presta en el moment en què les fas servir, amb el teu consentiment.",
         ],
       },
     ],

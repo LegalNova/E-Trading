@@ -2,7 +2,7 @@
 // Prices are NOT written here: they come from ./prices (which reads the tables used for charging).
 import { LEGAL_UPDATED_BY_LANG } from '@/shared/legal'
 import { OWNER } from './owner'
-import { giftPrice, groupRows, planPrice, RULES } from './prices'
+import { gemPacksText, giftPrice, groupRows, planPrice, RULES } from './prices'
 import type { LegalDoc, LegalSlug } from './types'
 
 const O = OWNER
@@ -209,7 +209,7 @@ export const en: Record<LegalSlug, LegalDoc> = {
         ],
       },
       { h: '5. Consequences', p: ['If these terms are breached we may correct progress or rewards obtained improperly, reset the virtual portfolio, or suspend or close the account. We will explain why and you will be able to respond.'] },
-      { h: '6. XP, gems, lives and achievements', p: ['They are game elements with no monetary value. They cannot be bought with money, sold, transferred or exchanged for money or prizes. We may adjust how they work to improve learning.'] },
+      { h: '6. XP, gems, lives and achievements', p: ['They are game elements with no monetary value outside the app. Gems are earned by learning and, once the gem shop is open, can also be obtained in paid packs (terms of purchase, section 15). None of them can be sold, transferred or exchanged for money or prizes. We may adjust how they work to improve learning.'] },
       {
         h: '7. Paid plans (Plus and Max)',
         list: [
@@ -373,6 +373,17 @@ export const en: Record<LegalSlug, LegalDoc> = {
           'Right of withdrawal: you have 14 calendar days from purchase to withdraw, as long as the gift has not been redeemed. We refund the full amount to the same payment method and the link stops working. Email us at ' + O.email + ' with your account email.',
           'Once redeemed, the gift has been used and cannot be refunded, because the service starts being provided at that moment with the consent of the person redeeming it.',
           'If you are 14 to 17, a parent or guardian has to confirm before you buy a gift, as in section 10.',
+        ],
+      },
+      {
+        h: '15. Gem packs',
+        p: ['Pending review by our lawyer. This section only applies once the gem shop is open.'],
+        list: [
+          'Gems are a virtual currency for use inside E-Trading: hints, Lumi colours, virtual money to practise with and other uses explained in the shop. They have no value outside the app and cannot be sold, transferred or exchanged for money.',
+          `Packs, taxes included: ${gemPacksText('en')}. It is a one-off card payment through Stripe, not a subscription. The price in euros is always shown before you pay.`,
+          'Only people aged 18 or over can buy gems.',
+          'Right of withdrawal: you have 14 calendar days from purchase to withdraw from any gems you have not spent. We refund the proportional amount by the same payment method. Write to us at ' + O.email + '.',
+          'Gems you have already spent are considered enjoyed and are not refunded, because the service is provided when you use them, with your consent.',
         ],
       },
     ],

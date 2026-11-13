@@ -3,6 +3,7 @@
 import type Stripe from 'stripe'
 import { db } from '@/server/db'
 import { GIFT_KIND, GIFT_META, GROUP_KIND, stripe, syncSubscription } from '@/server/billing/stripe'
+import { creditGems, GEM_KIND } from '@/server/game/gem-store'
 import { groupInvoice } from '@/server/game/groups'
 import { giftRefunded, giftSessionExpired, markGiftPaid } from '@/server/game/gifts'
 import { notify } from '@/server/game/core'
@@ -37,6 +38,8 @@ export async function POST(req: Request) {
         const s = event.data.object
         // Regalo (pago único): queda listo para compartir (si la vuelta a la app ya lo confirmó, no pasa nada)
         if (s.mode === 'payment' && s.metadata?.kind === GIFT_KIND) await markGiftPaid(s)
+        // Pack de gemas pagado (auditoría PRO-3): se abonan una sola vez
+        else if (s.mode === 'payment' && s.metadata?.kind === GEM_KIND) await creditGems(s)
         else if (s.subscription) await syncSubscription(await stripe.subscriptions.retrieve(String(s.subscription)))
         break
       }
@@ -44,6 +47,7 @@ export async function POST(req: Request) {
       case 'checkout.session.async_payment_succeeded': {
         const s = event.data.object
         if (s.metadata?.kind === GIFT_KIND) await markGiftPaid(s)
+        if (s.metadata?.kind === GEM_KIND) await creditGems(s)
         break
       }
       case 'checkout.session.expired': {

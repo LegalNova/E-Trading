@@ -17,6 +17,7 @@ import * as feedback from '@/server/game/feedback'
 import * as push from '@/server/push'
 import * as invites from '@/server/game/invites'
 import * as gifts from '@/server/game/gifts'
+import * as gemStore from '@/server/game/gem-store'
 import * as friends from '@/server/game/friends'
 import * as learning from '@/server/game/learning'
 import * as profile from '@/server/game/profile'
@@ -233,6 +234,10 @@ const routes: Route[] = [
   { method: 'POST', path: 'team-messages/:id/seen', run: async (_r, p) => { await rateLimit(`tmseen:${(await requireUser()).id}`, 60, 60); return team.seenTeamMessage(z.string().regex(/^tm-[a-z0-9-]{4,60}$/).parse(p[0])) } },
   // Regalar Lumi: comprar (pago único con Stripe), confirmar el pago, mis regalos y, con el código, ver y canjear
   { method: 'GET', path: 'gifts', run: () => gifts.myGifts() },
+  // Tienda de gemas en euros (auditoría PRO-3): apagada salvo GEM_STORE=on, solo adultos
+  { method: 'GET', path: 'shop/gem-store', run: () => gemStore.gemStore() },
+  { method: 'POST', path: 'shop/gem-store/checkout', run: async (r, _p, b) => { await rateLimit(`gempay:${(await requireUser()).id}`, 10, 3600); const x = z.object({ packId: z.enum(['gems-500', 'gems-1200', 'gems-3000']), locale: z.enum(['es', 'ca', 'en']) }).parse(b); return gemStore.gemCheckout(x.packId, { origin: r.headers.get('origin') ?? `https://${r.headers.get('host')}`, locale: x.locale }) } },
+  { method: 'POST', path: 'shop/gem-store/confirm', run: async (_r, _p, b) => { await rateLimit(`gempay:${(await requireUser()).id}`, 40, 60); return gemStore.confirmGems(z.object({ sessionId: z.string().regex(/^cs_(test|live)_[A-Za-z0-9]{10,200}$/) }).parse(b).sessionId) } },
   { method: 'POST', path: 'gifts', run: async (_r, _p, b) => { const x = z.object({ tier: z.enum(['PLUS', 'PREMIUM']), months: z.union([z.literal(1), z.literal(12)]), fromName: z.string().max(80), toName: z.string().max(80).optional(), message: z.string().max(600).optional() }).parse(b); await rateLimit(`gift:${(await requireUser()).id}`, 12, 3600); return gifts.createGift(x) } },
   { method: 'POST', path: 'gifts/confirm', run: async (_r, _p, b) => { await rateLimit(`giftpay:${(await requireUser()).id}`, 40, 60); return gifts.confirmGift(z.object({ sessionId: z.string().regex(/^cs_(test|live)_[A-Za-z0-9]{10,200}$/) }).parse(b).sessionId) } },
   { method: 'GET', path: 'gifts/code/:code', run: async (r, p) => { await rateLimit(`giftcode:${clientIp(r)}`, 60, 60); return gifts.publicGift(p[0].slice(0, 30)) } },

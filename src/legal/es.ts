@@ -2,7 +2,7 @@
 // Los precios NO se escriben aquí: salen de ./prices (que lee las tablas con las que se cobra).
 import { LEGAL_UPDATED } from '@/shared/legal'
 import { OWNER } from './owner'
-import { giftPrice, groupRows, planPrice, RULES } from './prices'
+import { gemPacksText, giftPrice, groupRows, planPrice, RULES } from './prices'
 import type { LegalDoc, LegalSlug } from './types'
 
 const O = OWNER
@@ -255,7 +255,7 @@ export const es: Record<LegalSlug, LegalDoc> = {
       },
       {
         h: '6. XP, gemas, vidas y logros',
-        p: ['Son elementos del juego, sin valor económico. No se pueden comprar con dinero, vender, transferir ni canjear por dinero o premios. Podemos ajustar su funcionamiento para mejorar el aprendizaje.'],
+        p: ['Son elementos del juego, sin valor económico fuera de la app. Las gemas se ganan aprendiendo y, cuando la tienda de gemas esté abierta, también se pueden conseguir en packs de pago (condiciones de contratación, apartado 15). Ninguno se puede vender, transferir ni canjear por dinero o premios. Podemos ajustar su funcionamiento para mejorar el aprendizaje.'],
       },
       {
         h: '7. Planes de pago (Plus y Max)',
@@ -434,6 +434,17 @@ export const es: Record<LegalSlug, LegalDoc> = {
           'Derecho de desistimiento: tienes 14 días naturales desde la compra para desistir, siempre que el regalo no se haya canjeado. Te devolvemos el importe completo por el mismo medio de pago y el enlace deja de funcionar. Escríbenos a ' + O.email + ' con el email de tu cuenta.',
           'Una vez canjeado, el regalo ya se ha disfrutado y no se puede devolver, porque el servicio empieza a prestarse en ese momento con el consentimiento de quien lo canjea.',
           'Para comprar un regalo entre los 14 y los 17 años hace falta la confirmación de tu madre, padre o tutor, como en el apartado 10.',
+        ],
+      },
+      {
+        h: '15. Packs de gemas',
+        p: ['Pendiente de revisión del abogado. Este apartado solo se aplica cuando la tienda de gemas esté abierta.'],
+        list: [
+          'Las gemas son una moneda virtual para usar dentro de E-Trading: pistas, colores de Lumi, dinero virtual para practicar y otros usos que se explican en la tienda. No tienen valor fuera de la app, no se pueden vender, transferir ni cambiar por dinero.',
+          `Packs, con impuestos incluidos: ${gemPacksText('es')}. Es un pago único con tarjeta a través de Stripe; no es una suscripción. El precio en euros se muestra siempre antes de pagar.`,
+          'Solo pueden comprar gemas las personas mayores de 18 años.',
+          'Derecho de desistimiento: tienes 14 días naturales desde la compra para desistir de las gemas que no hayas gastado. Te devolvemos la parte proporcional por el mismo medio de pago. Escríbenos a ' + O.email + '.',
+          'Las gemas que ya has gastado se consideran disfrutadas y no se devuelven, porque el servicio se presta en el momento en que las usas, con tu consentimiento.',
         ],
       },
     ],

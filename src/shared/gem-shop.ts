@@ -34,3 +34,15 @@ export const GEM_SKINS: { id: string; color: string; price: number }[] = [
 
 /** Tipos de pregunta en los que se puede pedir pista (una sola respuesta buena entre tres o más) */
 export const HINT_TYPES = new Set(['SINGLE', 'SCENARIO', 'CHAT'])
+
+// ── Tienda de gemas en euros (auditoría PRO-3, PRO-4, PRO-6 y PRO-9) ──────────
+// Apagada por defecto: se enciende con la variable GEM_STORE=on en Vercel, y solo cuando el abogado lo haya revisado.
+// Solo adultos (18+), precio en euros siempre a la vista, sin cuentas atrás ni ofertas con prisa (normas europeas de
+// consumo sobre monedas virtuales). Packs más grandes y precios de las gemas sin tocar (PRO-4: no se toca el saldo de nadie).
+export const GEM_PACKS = [
+  { id: 'gems-500', gems: 500, eur: 2.99 },
+  { id: 'gems-1200', gems: 1200, eur: 5.99 },
+  { id: 'gems-3000', gems: 3000, eur: 11.99 },
+] as const
+export type GemPackId = (typeof GEM_PACKS)[number]['id']
+export const GEM_STORE_MIN_AGE = 18

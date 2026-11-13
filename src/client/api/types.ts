@@ -276,6 +276,9 @@ export interface Api {
   buyStreakFreeze(): Promise<StreakT>
   gemShop(): Promise<GemShopT>
   buyCash(): Promise<{ gems: number; left: number }>
+  gemStore(): Promise<{ open: boolean; reason: 'OFF' | 'NO_AGE' | 'MINOR' | null; packs: { id: string; gems: number; eur: number }[] }>
+  gemCheckout(packId: string, locale: string): Promise<{ url: string }>
+  confirmGems(sessionId: string): Promise<{ done: boolean; gems?: number }>
   buyLesson(id: string): Promise<{ gems: number; lessonId: string }>
   buyTutor(): Promise<{ gems: number }>
   buyReset(): Promise<{ gems: number; resetsLeft: number }>

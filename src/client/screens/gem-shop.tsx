@@ -36,6 +36,12 @@ export function GemShop() {
   const pass = useMutation({ mutationFn: api.buyMaxPass, onSuccess: done(t('passBought')), onError })
   const tutor = useMutation({ mutationFn: api.buyTutor, onSuccess: done(t('tutorBought', { n: shop.data?.tutorExtra ?? 10 })), onError })
   const reset = useMutation({ mutationFn: api.buyReset, onSuccess: done(t('resetBought')), onError })
+  // Tienda en euros (PRO-3): solo si está encendida y para adultos; si no, se dice por qué
+  const store = useQuery({ queryKey: ['gem-store'], queryFn: api.gemStore })
+  const checkout = useMutation({ mutationFn: (id: string) => api.gemCheckout(id, locale), onSuccess: r => void (window.location.href = r.url), onError })
+  // Vuelta de la página de pago: se confirma con Stripe y se abonan las gemas
+  const sid = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('sid') : null
+  const confirm = useQuery({ queryKey: ['gem-confirm', sid], queryFn: () => api.confirmGems(sid!), enabled: !!sid, refetchInterval: q => (q.state.data?.done ? false : 3000) })
   if (shop.isError) return <ErrorState onRetry={shop.refetch} />
   if (!shop.data || !me) return <PageSkeleton />
   const s = shop.data
@@ -55,6 +61,12 @@ export function GemShop() {
             </span>
           </span>
         </div>
+
+        {sid && (
+          <div className="banner banner-info" role="status">
+            {confirm.data?.done ? t('storeOk') : t('storeWait')}
+          </div>
+        )}
 
         {/* Dinero virtual para practicar (PRO-2: entra como aportación, sin tocar la rentabilidad ni la liga) */}
         <div className="card flex flex-col gap-2">
@@ -143,6 +155,27 @@ export function GemShop() {
             <b className="t-head block">{t('livesTitle')}</b>
             <span className="t-foot">{t('livesBody')}</span>
           </span>
+        </div>
+
+        {/* Más gemas con dinero (PRO-3, PRO-6): precio en euros siempre visible, sin prisas ni cuentas atrás */}
+        <div className="card flex flex-col gap-2.5">
+          <b className="t-head">{t('storeTitle')}</b>
+          {store.data?.open ? (
+            <>
+              <span className="t-foot">{t('storeBody')}</span>
+              {store.data.packs.map(p => (
+                <button key={p.id} className="opt flex items-center justify-between" disabled={checkout.isPending} onClick={() => checkout.mutate(p.id)}>
+                  <span className="inline-flex items-center gap-1.5">
+                    <Gem /> <b>{t('storePack', { gems: p.gems })}</b>
+                  </span>
+                  <span className="t-head">{t('storeBuy', { price: money(p.eur, 'EUR', locale) })}</span>
+                </button>
+              ))}
+              <span className="t-cap">{t('storeLegal')}</span>
+            </>
+          ) : (
+            <span className="t-foot">{store.data?.reason === 'MINOR' ? t('storeMinor') : store.data?.reason === 'NO_AGE' ? t('storeNoAge') : t('storeOff')}</span>
+          )}
         </div>
 
         {/* PRO-5: al lado de lo que se consigue con gemas, lo que da Plus */}
