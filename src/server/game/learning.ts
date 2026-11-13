@@ -12,6 +12,7 @@ import { grade } from '../content/grading'
 import { numChoices } from '../content/choices'
 import { engineT, lessonTitleT, questionT, stepsT, unitT } from '../content/translate'
 import { glossaryFor } from '../content/glossary'
+import { splitText } from '@/shared/split-text'
 import { currentLocale } from '../locale'
 import { afterReview } from './srs'
 import { trackDaily, trackLessonStart } from './analytics'
@@ -175,7 +176,19 @@ export async function lesson(user: User, tx: Tx, id: string, peek = false): Prom
     return { id: sid, type: 'SIMULATOR_TASK', title: s.title, body: s.body, task: s.task }
   })
   steps.push({ id: `${id}-quiz`, type: 'QUIZ', quizId: l.quizId, title: e.quizTitle, body: e.quizBody((QUIZZES[l.quizId] ?? []).length, user.plan === 'FREE') }) // vidas ilimitadas en Plus y Max
-  const out = steps.map(st => walkTexts(st, brand))
+  // Una idea por pantalla (PRO-16): los textos largos se reparten en 2 o 3 pantallas, cortando entre párrafos.
+  // La idea clave y el truco de Lumi van en la última; las pantallas nuevas llevan otro id (las de siempre no cambian).
+  const out = steps
+    .flatMap((st): LessonStepT[] => {
+      if (st.type !== 'TEXT' || l.isUnitReview || l.isBoss) return [st]
+      const parts = splitText(st.body)
+      if (parts.length < 2) return [st]
+      return parts.map((body, k) => {
+        const lastPart = k === parts.length - 1
+        return { id: k ? `${st.id}-p${k + 1}` : st.id, type: 'TEXT', title: st.title, body, ...(lastPart && st.keyIdea ? { keyIdea: st.keyIdea } : {}), ...(lastPart && st.companionTip ? { companionTip: st.companionTip } : {}) }
+      })
+    })
+    .map(st => walkTexts(st, brand))
   // En la propia unidad de vocabulario no: allí las palabras ya vienen definidas
   const glossary = l.unit.id === 'vocab' ? [] : glossaryFor(loc, out.flatMap(st => (st.type === 'TEXT' || st.type === 'IMAGE' ? [st.body] : st.type === 'PLAY' ? [st.intro] : [])))
   return { id, title, unitTitle, minutes: l.minutes, xp: shownXp(l), steps: out, ...(glossary.length ? { glossary } : {}) }
