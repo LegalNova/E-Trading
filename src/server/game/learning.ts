@@ -79,6 +79,7 @@ export async function pathOf(tx: Tx, user: User): Promise<CoursePathT> {
   const rows = await tx.lessonProgress.findMany({ where: { userId: user.id } })
   const done = new Map(rows.map(r => [r.lessonId, r]))
   const extra = fullUnitsOf(user.plan, done)
+  const gemOpen = new Set(((user.settings as { gemLessons?: unknown } | null)?.gemLessons as string[] | undefined) ?? [])
   // Una lección disponible cada vez en cada «camino»: el principal (o cada sección abierta del curso v2) y cada
   // unidad paralela (Vocabulario). Una sección se abre al aprobar el reto final de las secciones que necesita.
   const found = { main: false, side: new Set<string>(), sections: new Set<string>() }
@@ -96,7 +97,8 @@ export async function pathOf(tx: Tx, user: User): Promise<CoursePathT> {
       const index = l.isUnitReview ? -1 : idx++
       // El reto final de sección está abierto en todos los planes (si no, el plan gratis no podría avanzar de sección)
       const requiredPlan = l.isBoss || (extra.has(u.id) && user.plan === 'FREE') ? 'FREE' : minPlan(u.id, index, !!l.isUnitReview, l.id)
-      const requiresPremium = !l.isBoss && !canOpen(user.plan, u.id, index, !!l.isUnitReview, l.id, extra)
+      // Una clase abierta con gemas queda abierta para siempre (auditoría PRO-1)
+      const requiresPremium = !l.isBoss && !canOpen(user.plan, u.id, index, !!l.isUnitReview, l.id, extra) && !gemOpen.has(l.id)
       let status: 'LOCKED' | 'AVAILABLE' | 'COMPLETED' = 'LOCKED'
       const sec = u.section?.id
       const free = u.side ? !found.side.has(u.id) : sec ? sectionOpen(u) && !found.sections.has(sec) : !found.main

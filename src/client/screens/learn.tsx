@@ -6,6 +6,8 @@ import { useEffect, useRef, useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
 import type { CoursePathT, LessonStepT, PathLessonT, PathUnitT } from '@/shared/contract'
 import { ROUTE_SECTIONS } from '@/shared/route'
+import { GEM_PRICES } from '@/shared/gem-shop'
+import { useToast } from '../providers'
 import { money, num, signedMoney } from '@/shared/format'
 import { api, ApiFailure } from '../api'
 import { useHome, useLang, useLives, useMe, usePath } from '../hooks'
@@ -390,6 +392,14 @@ export function Path() {
   const { data: me } = useMe()
   const { data: mistakes = 0 } = useQuery({ queryKey: ['mistakes'], queryFn: api.mistakesCount })
   const [locked, setLocked] = useState<PathLessonT | null>(null)
+  const tsh = useTranslations('shop')
+  const qcp = useQueryClient()
+  const toastP = useToast()
+  const unlock = useMutation({
+    mutationFn: (id: string) => api.buyLesson(id),
+    onSuccess: () => (qcp.invalidateQueries(), setLocked(null), toastP(tsh('lessonBought'))),
+    onError: e => toastP(e instanceof ApiFailure && e.code === 'INSUFFICIENT_GEMS' ? tsh('notEnough') : tsh('error')),
+  })
   const [openUnits, setOpenUnits] = useState<Set<string>>(new Set())
   if (isError) return <ErrorState onRetry={refetch} />
   if (!p) return <PageSkeleton />
@@ -522,6 +532,12 @@ export function Path() {
         {locked?.requiresPremium && (
           <button className="btn btn-primary" onClick={() => router.push('/premium')}>
             {t('tryMaxFree')}
+          </button>
+        )}
+        {/* O abrir solo esta clase, para siempre, con gemas ganadas (auditoría PRO-1) */}
+        {locked?.requiresPremium && (
+          <button className="btn btn-secondary" disabled={unlock.isPending || (me?.gems ?? 0) < GEM_PRICES.lesson} onClick={() => unlock.mutate(locked.id)}>
+            <Gem /> {tsh('lessonBuy', { n: GEM_PRICES.lesson })}
           </button>
         )}
         <button className="btn btn-plain" onClick={() => setLocked(null)}>

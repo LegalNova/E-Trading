@@ -18,6 +18,7 @@ const MODES: TutorModeT[] = ['EXPLAIN', 'PATH', 'PORTFOLIO', 'BIASES']
 
 export function Tutor({ lessonTitle }: { lessonTitle?: string }) {
   const t = useTranslations('tutor')
+  const tsh = useTranslations('shop')
   const t2 = useTranslations('tutor2')
   const qc = useQueryClient()
   const toast = useToast()
@@ -159,6 +160,12 @@ export function Tutor({ lessonTitle }: { lessonTitle?: string }) {
               </Link>
             )}
           </div>
+        )}
+        {/* También con gemas ganadas: 10 preguntas más solo hoy (auditoría PRO-1) */}
+        {limited && (
+          <Link href="/perfil/tienda" className="link self-center text-sm">
+            {tsh('tutorMore', { n: 10 })}
+          </Link>
         )}
       </div>
 

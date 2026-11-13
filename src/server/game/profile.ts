@@ -1,6 +1,6 @@
 import 'server-only'
 import { realName } from '@/shared/names'
-import { CASH_PACK, CASH_PACKS_PER_MONTH, GEM_PRICES, GEM_SKINS } from '@/shared/gem-shop'
+import { CASH_PACK, CASH_PACKS_PER_MONTH, GEM_PRICES, GEM_SKINS, MAX_PASSES_PER_MONTH, TUTOR_EXTRA } from '@/shared/gem-shop'
 import { cleanSource, track, trackDaily } from './analytics'
 import { linkInviter, maybeRewardInvite } from './invites'
 import { priceOf, tierOf, TRIAL_DAYS, TRIAL_STREAK, trialUnlocked } from '@/shared/plans'
@@ -249,7 +249,12 @@ export const gemShop = () =>
   withCtx(async c => {
     const month = c.today.slice(0, 7)
     const bought = (c.counters as { cashMonth?: string; cashBuys?: number }).cashMonth === month ? ((c.counters as { cashBuys?: number }).cashBuys ?? 0) : 0
-    return { gems: c.g.gems, prices: GEM_PRICES, cash: { amount: CASH_PACK, left: Math.max(0, CASH_PACKS_PER_MONTH - bought), perMonth: CASH_PACKS_PER_MONTH }, skins: GEM_SKINS.map(s => ({ ...s, owned: ownedSkins(c.user).includes(s.id) })) }
+    return {
+      gems: c.g.gems, prices: GEM_PRICES, cash: { amount: CASH_PACK, left: Math.max(0, CASH_PACKS_PER_MONTH - bought), perMonth: CASH_PACKS_PER_MONTH },
+      skins: GEM_SKINS.map(s => ({ ...s, owned: ownedSkins(c.user).includes(s.id) })),
+      maxPass: { left: c.user.plan === 'FREE' ? Math.max(0, MAX_PASSES_PER_MONTH - monthCount(c, 'pass')) : 0, free: c.user.plan === 'FREE' },
+      tutorExtra: TUTOR_EXTRA,
+    }
   })
 
 /** +5.000 € de dinero virtual: entra como aportación (no cuenta como rentabilidad ni en la liga). Dos al mes. */
@@ -280,6 +285,63 @@ export const buySkin = (id: string) =>
     await c.tx.user.update({ where: { id: c.user.id }, data: { skinId: id, settings: { ...((c.user.settings as object) ?? {}), ownedSkins: owned } } })
     await endFx(c)
     return { gems: c.g.gems, skinId: id }
+  })
+
+/** Clases de pago abiertas con gemas (se guardan con los ajustes: sin cambios en la base de datos) */
+export const gemLessons = (u: User): string[] => ((u.settings as { gemLessons?: unknown } | null)?.gemLessons as string[] | undefined)?.filter(x => typeof x === 'string') ?? []
+const monthCount = (c: { counters: object; today: string }, key: string) => {
+  const k = c.counters as Record<string, unknown>
+  return k[`${key}Month`] === c.today.slice(0, 7) ? Number(k[`${key}Buys`] ?? 0) : 0
+}
+const spend = (c: { g: { gems: number } }, price: number) => {
+  if (c.g.gems < price) fail(402, 'INSUFFICIENT_GEMS', `Necesitas ${price} gemas`)
+  c.g.gems -= price
+}
+
+/** Abrir para siempre una clase de pago con gemas (auditoría PRO-1) */
+export const buyLesson = (lessonId: string) =>
+  withCtx(async c => {
+    const st = (await pathOf(c.tx, c.user)).units.flatMap(u => u.lessons).find(l => l.id === lessonId) ?? fail(404, 'NOT_FOUND', 'Clase no encontrada')
+    if (!st.requiresPremium) fail(409, 'CONFLICT', 'Esta clase ya la tienes abierta')
+    spend(c, GEM_PRICES.lesson)
+    await c.tx.user.update({ where: { id: c.user.id }, data: { settings: { ...((c.user.settings as object) ?? {}), gemLessons: [...gemLessons(c.user), lessonId] } } })
+    await endFx(c)
+    return { gems: c.g.gems, lessonId }
+  })
+
+/** 10 preguntas más a Lumi, solo hoy */
+export const buyTutor = () =>
+  withCtx(async c => {
+    spend(c, GEM_PRICES.tutor)
+    const k = c.counters as { tutorDay?: string; tutorExtra?: number }
+    Object.assign(c.counters, { tutorDay: c.today, tutorExtra: (k.tutorDay === c.today ? (k.tutorExtra ?? 0) : 0) + TUTOR_EXTRA })
+    await endFx(c)
+    return { gems: c.g.gems }
+  })
+
+/** Un reinicio más de la cartera virtual este año */
+export const buyReset = () =>
+  withCtx(async c => {
+    spend(c, GEM_PRICES.reset)
+    const year = new Date().getFullYear()
+    const pf = await c.tx.portfolio.findUnique({ where: { userId: c.user.id } })
+    const left = pf && pf.resetsYear === year ? pf.resetsLeft : 3
+    await c.tx.portfolio.update({ where: { userId: c.user.id }, data: { resetsLeft: left + 1, resetsYear: year } })
+    await endFx(c)
+    return { gems: c.g.gems, resetsLeft: left + 1 }
+  })
+
+/** Pase Max de 24 horas: solo en el plan gratis y dos al mes, para no sustituir a la suscripción (auditoría PRO-5) */
+export const buyMaxPass = () =>
+  withCtx(async c => {
+    if (c.user.plan !== 'FREE') fail(409, 'CONFLICT', 'Ya tienes un plan de pago')
+    const n = monthCount(c, 'pass')
+    if (n >= MAX_PASSES_PER_MONTH) fail(409, 'LIMIT', `Como mucho ${MAX_PASSES_PER_MONTH} al mes`)
+    spend(c, GEM_PRICES.maxPass)
+    await (await import('./grants')).grantPlan(c.tx, c.user.id, 'PREMIUM', 1, `gempass-${c.user.id}-${c.today}-${n}`)
+    Object.assign(c.counters, { passMonth: c.today.slice(0, 7), passBuys: n + 1 })
+    await endFx(c)
+    return { gems: c.g.gems }
   })
 
 // Fallos que toca repasar hoy (repaso espaciado), solo de preguntas que siguen en el curso

@@ -276,6 +276,10 @@ export interface Api {
   buyStreakFreeze(): Promise<StreakT>
   gemShop(): Promise<GemShopT>
   buyCash(): Promise<{ gems: number; left: number }>
+  buyLesson(id: string): Promise<{ gems: number; lessonId: string }>
+  buyTutor(): Promise<{ gems: number }>
+  buyReset(): Promise<{ gems: number; resetsLeft: number }>
+  buyMaxPass(): Promise<{ gems: number }>
   buySkin(id: string): Promise<{ gems: number; skinId: string }>
   hint(attemptId: string, questionId: string): Promise<{ removed: number; gems: number }>
   achievements(): Promise<AchievementT[]>
@@ -369,7 +373,9 @@ export interface Api {
 /** Tienda de gemas (auditoría PRO-1): lo que se puede conseguir y lo que queda este mes */
 export interface GemShopT {
   gems: number
-  prices: { hint: number; cash: number }
+  prices: { hint: number; cash: number; lesson: number; tutor: number; reset: number; maxPass: number }
   cash: { amount: number; left: number; perMonth: number }
   skins: { id: string; color: string; price: number; owned: boolean }[]
+  maxPass: { left: number; free: boolean }
+  tutorExtra: number
 }

@@ -32,6 +32,10 @@ export function GemShop() {
     onSuccess: () => (refresh(), shop.refetch(), setParty(p => p + 1), toast(t('skinBought'))),
     onError,
   })
+  const done = (msg: string) => () => (refresh(), shop.refetch(), setParty(p => p + 1), toast(msg))
+  const pass = useMutation({ mutationFn: api.buyMaxPass, onSuccess: done(t('passBought')), onError })
+  const tutor = useMutation({ mutationFn: api.buyTutor, onSuccess: done(t('tutorBought', { n: shop.data?.tutorExtra ?? 10 })), onError })
+  const reset = useMutation({ mutationFn: api.buyReset, onSuccess: done(t('resetBought')), onError })
   if (shop.isError) return <ErrorState onRetry={shop.refetch} />
   if (!shop.data || !me) return <PageSkeleton />
   const s = shop.data
@@ -60,6 +64,43 @@ export function GemShop() {
           <button className="btn btn-primary" disabled={s.cash.left <= 0 || s.gems < s.prices.cash || cash.isPending} onClick={() => cash.mutate()}>
             <Gem /> {t('buy', { n: s.prices.cash })}
           </button>
+        </div>
+
+        {/* Pase Max de 24 horas: solo en el plan gratis y dos al mes (auditoría PRO-5) */}
+        <div className="card flex flex-col gap-2">
+          <b className="t-head">{t('passTitle')}</b>
+          <span className="t-foot">{t('passBody')}</span>
+          <span className="t-cap">{s.maxPass.free ? (s.maxPass.left > 0 ? t('passLeft', { n: s.maxPass.left }) : t('cashNone')) : t('passNone')}</span>
+          <button className="btn btn-secondary" disabled={!s.maxPass.free || s.maxPass.left <= 0 || s.gems < s.prices.maxPass || pass.isPending} onClick={() => pass.mutate()}>
+            <Gem /> {t('buy', { n: s.prices.maxPass })}
+          </button>
+        </div>
+
+        <div className="card flex flex-col gap-2">
+          <b className="t-head">{t('tutorTitle', { n: s.tutorExtra })}</b>
+          <span className="t-foot">{t('tutorBody')}</span>
+          <button className="btn btn-secondary" disabled={s.gems < s.prices.tutor || tutor.isPending} onClick={() => tutor.mutate()}>
+            <Gem /> {t('buy', { n: s.prices.tutor })}
+          </button>
+        </div>
+
+        <div className="card flex flex-col gap-2">
+          <b className="t-head">{t('resetTitle')}</b>
+          <span className="t-foot">{t('resetBody')}</span>
+          <button className="btn btn-secondary" disabled={s.gems < s.prices.reset || reset.isPending} onClick={() => reset.mutate()}>
+            <Gem /> {t('buy', { n: s.prices.reset })}
+          </button>
+        </div>
+
+        <div className="card flex items-start gap-3">
+          <Icon name="lock" size={22} />
+          <span className="flex-1">
+            <b className="t-head block">{t('lessonTitle')}</b>
+            <span className="t-foot">{t('lessonBody')}</span>
+          </span>
+          <span className="chip flex-none">
+            <Gem /> {s.prices.lesson}
+          </span>
         </div>
 
         {/* Colores de Lumi */}

@@ -35,8 +35,12 @@ async function aiUsage(user: User) {
 }
 
 export async function usage(user: User) {
-  const used = await db.tutorMessage.count({ where: { userId: user.id, role: 'user', createdAt: { gte: startOfDay() } } })
-  return { used, limit: TUTOR_LIMITS[user.plan] }
+  const [used, g] = await Promise.all([db.tutorMessage.count({ where: { userId: user.id, role: 'user', createdAt: { gte: startOfDay() } } }), db.gameState.findUnique({ where: { userId: user.id }, select: { counters: true } })])
+  // Preguntas extra compradas con gemas hoy (auditoría PRO-1). «Hoy» con el mismo corte que el contador de arriba.
+  const k = (g?.counters ?? {}) as { tutorDay?: string; tutorExtra?: number }
+  const today = new Date(startOfDay()).toISOString().slice(0, 10)
+  const extra = k.tutorDay && k.tutorDay >= today ? (k.tutorExtra ?? 0) : 0
+  return { used, limit: TUTOR_LIMITS[user.plan] + extra }
 }
 
 export async function history(user: User): Promise<TutorHistoryT> {
