@@ -1,4 +1,7 @@
+'use client'
 import { GEM_SKINS } from '@/shared/gem-shop'
+import { useEffect, useRef, useState } from 'react'
+import type { LumiHandle } from './lumi3d'
 // Lumi: un cubo de gelatina que te acompaña. El backend devuelve el estado de ánimo y aquí se dibuja la cara.
 // Con el nivel del alumno le van saliendo burbujitas de luz dentro (de 1 a 5).
 import type { Mood } from '@/shared/contract'
@@ -58,11 +61,55 @@ const BUBBLES: [number, number, number][] = [
   [24, 41, 1.4],
 ]
 
-export function Lumi({ mood = 'HAPPY', size = 44, skin = 'azul', stage = 1, label = 'Lumi', className, animated = true }: { mood?: Mood; size?: number; skin?: string; stage?: number; label?: string; className?: string; animated?: boolean }) {
-  const fill = SKINS.find(s => s.id === skin)?.color ?? GEM_SKINS.find(s => s.id === skin)?.color ?? 'var(--lumi)'
+type LumiProps = { mood?: Mood; size?: number; skin?: string; stage?: number; label?: string; className?: string; animated?: boolean }
+const skinColor = (skin: string) => SKINS.find(s => s.id === skin)?.color ?? GEM_SKINS.find(s => s.id === skin)?.color ?? 'var(--lumi)'
+
+/** Lumi en 3D (el cubo de gelatina con volumen). Mientras carga, o si el dispositivo no tiene WebGL, se ve la Lumi plana */
+export function Lumi(props: LumiProps) {
+  const { mood = 'HAPPY', size = 44, skin = 'azul', stage = 1, label = 'Lumi', className, animated = true } = props
+  const canvas = useRef<HTMLCanvasElement>(null)
+  const handle = useRef<LumiHandle | null>(null)
+  const [on, setOn] = useState(false)
+  const params = { mood, color: skinColor(skin), stage, animated }
+  const latest = useRef(params)
+  useEffect(() => {
+    latest.current = params
+    handle.current?.update(params)
+  })
+  useEffect(() => {
+    let alive = true
+    const c = canvas.current
+    if (!c) return
+    const dpr = Math.min(2, window.devicePixelRatio || 1)
+    c.width = Math.round(size * dpr)
+    c.height = Math.round(size * dpr)
+    import('./lumi3d')
+      .then(m => {
+        if (!alive) return
+        handle.current = m.attachLumi(c, latest.current)
+        if (handle.current) setOn(true)
+      })
+      .catch(() => {})
+    return () => {
+      alive = false
+      handle.current?.dispose()
+      handle.current = null
+    }
+  }, [size])
+  return (
+    <span role="img" aria-label={label} className={`lumi-3d ${className ?? ''}`} style={{ position: 'relative', display: 'inline-block', width: size, height: size, flex: 'none', lineHeight: 0 }}>
+      {!on && <LumiFlat {...props} label={undefined} className={undefined} />}
+      <canvas ref={canvas} aria-hidden="true" style={{ width: size, height: size, display: on ? 'block' : 'none' }} />
+    </span>
+  )
+}
+
+/** La Lumi plana (dibujo SVG): se ve mientras carga la 3D y en dispositivos sin WebGL */
+export function LumiFlat({ mood = 'HAPPY', size = 44, skin = 'azul', stage = 1, label, className, animated = true }: LumiProps) {
+  const fill = skinColor(skin)
   const st = Math.min(5, Math.max(1, stage))
   return (
-    <svg width={size} height={size} viewBox="0 0 48 48" role="img" aria-label={label} className={`lumi ${animated ? 'lumi-anim' : ''} lumi-${mood.toLowerCase()} ${className ?? ''}`} style={{ flex: 'none', overflow: 'visible' }}>
+    <svg width={size} height={size} viewBox="0 0 48 48" role={label ? 'img' : undefined} aria-label={label} aria-hidden={label ? undefined : true} className={`lumi ${animated ? 'lumi-anim' : ''} lumi-${mood.toLowerCase()} ${className ?? ''}`} style={{ flex: 'none', overflow: 'visible' }}>
       <defs>
         <linearGradient id="lumi-gloss" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor={W} stopOpacity="0.28" />
