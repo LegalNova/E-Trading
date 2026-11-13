@@ -38,6 +38,14 @@ export const Widget = z.discriminatedUnion('kind', [
     cards: z.array(z.object({ icon: z.string(), label: z.string(), value: z.number().optional(), bin: z.number(), why: z.string() })),
     sumLabel: z.string().optional(),
   }),
+  /**
+   * Desliza las tarjetas (auditoría PRO-15): las mismas tarjetas que «clasifica», con dos grupos, pero se lanzan a la
+   * izquierda o a la derecha. Da variedad a las unidades donde «clasifica» pasaba de un tercio de las piezas (PRO-14).
+   */
+  z.object({
+    kind: z.literal('swipe'), bins: z.array(z.object({ label: z.string() })).length(2),
+    cards: z.array(z.object({ icon: z.string(), label: z.string(), bin: z.number(), why: z.string() })),
+  }),
   /** Reparte el sueldo entre gastos y mira cómo queda frente a 50/30/20 */
   z.object({
     kind: z.literal('budget'), salary: z.number(), groups: z.array(z.string()), targets: z.array(z.number()),

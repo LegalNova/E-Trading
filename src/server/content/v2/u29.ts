@@ -165,7 +165,7 @@ export default unit({
         title: 'Lo que hace falta y lo que sobra',
         intro: 'Una cartera indexada sencilla tiene **uno, dos o tres fondos**. ¿Qué necesita de verdad?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Hace falta' }, { label: 'No hace falta' }],
           cards: [
             { icon: 'pie', label: 'Decidir el reparto entre acciones y bonos', bin: 0, why: 'Es la decisión que más pesa en cómo se mueve tu cartera.' },

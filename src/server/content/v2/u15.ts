@@ -139,7 +139,7 @@ export default unit({
         title: '¿Economía o clima?',
         intro: 'Unas materias primas se mueven con la **economía** y otras, con el **campo**. ¿De qué tipo es cada una?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Metal: lo mueve la economía' }, { label: 'Agrícola: lo mueve el clima' }],
           cards: [
             { icon: 'mining', label: 'Cobre', bin: 0, why: 'Cables, construcción, coches eléctricos: está en casi todo lo que se fabrica.' },
@@ -188,7 +188,7 @@ export default unit({
         title: '¿Directa o a través de una empresa?',
         intro: 'Hay cuatro caminos: metal **físico**, **ETC** (cotiza como un ETF), **futuros** y **acciones** de mineras o petroleras. ¿Cuál te da el precio directamente?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Directa al precio' }, { label: 'A través de una empresa' }],
           cards: [
             { icon: 'gem', label: 'Lingotes y monedas de oro', bin: 0, why: 'Tienes el metal, pero hay que guardarlo y se compra y vende con margen.' },

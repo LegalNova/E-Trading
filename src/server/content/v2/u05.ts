@@ -59,7 +59,7 @@ export default unit({
         title: '¿Quién está al otro lado?',
         intro: 'Cuando compras una acción, alguien te la vende. ¿Quién puede ser? Clasifica a cada uno.',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Particular (minorista)' }, { label: 'Profesional' }],
           cards: [
             { icon: 'person', label: 'Un estudiante que invierte 50 € al mes desde su app', bin: 0, why: 'Es un **minorista**: un particular que invierte su propio dinero.' },
@@ -109,7 +109,7 @@ export default unit({
         title: 'Jueves, 20:00 en España',
         intro: 'Cada mercado tiene su horario. Es jueves y son las **20:00** (hora peninsular). ¿Qué está abierto?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Abierto' }, { label: 'Cerrado' }],
           cards: [
             { icon: 'building', label: 'Bolsa de Madrid', bin: 1, why: 'Abre de 9:00 a 17:30: hace horas que cerró.' },
@@ -171,7 +171,7 @@ export default unit({
         title: '¿Y si algo sale mal?',
         intro: 'Tras comprar, tus acciones quedan **registradas a tu nombre**, separadas del patrimonio del bróker. ¿Qué te protege y qué no?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Estás protegido' }, { label: 'Es riesgo tuyo' }],
           cards: [
             { icon: 'lock', label: 'Tu bróker quiebra, pero tus acciones están a tu nombre', bin: 0, why: 'El **custodio** las guarda separadas del patrimonio del bróker: siguen siendo tuyas.' },
@@ -219,7 +219,7 @@ export default unit({
         title: '¿Quién recibe tu dinero?',
         intro: 'En el **mercado primario** se emiten valores nuevos. En el **secundario**, los inversores se compran y venden los que ya existen.',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'El emisor (primario)' }, { label: 'Otro inversor (secundario)' }],
           cards: [
             { icon: 'company', label: 'Una empresa amplía capital con acciones nuevas', bin: 0, why: 'Emite acciones nuevas: el dinero va a la empresa.' },
@@ -242,7 +242,7 @@ export default unit({
         title: '¿OPS u OPV?',
         intro: 'Para salir a bolsa hay dos formas, a menudo combinadas. La clave: **¿quién se queda el dinero?**',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'OPS: va a la empresa' }, { label: 'OPV: va a los dueños que venden' }],
           cards: [
             { icon: 'factory', label: 'Se crean acciones nuevas para abrir fábricas', bin: 0, why: 'Oferta pública de **suscripción**: acciones nuevas, dinero para la empresa.' },

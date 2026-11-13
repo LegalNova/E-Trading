@@ -229,7 +229,7 @@ export default unit({
         title: 'Sorpresa o decepción',
         intro: 'Día de resultados: lo que importa es la **diferencia con lo esperado**. ¿Qué suele hacer la acción en cada caso?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Suele subir' }, { label: 'Suele bajar' }],
           cards: [
             { icon: 'down', label: 'BPA de 1,10 € cuando el consenso esperaba 1,20 €', bin: 1, why: 'Se compara con lo esperado, no con el año pasado.' },
@@ -268,7 +268,7 @@ export default unit({
         title: 'Señales en un informe anual',
         intro: 'En 2020 quebró Wirecard, una empresa alemana de pagos: su auditor no encontraba una parte enorme de su caja. Estas señales de un informe anual se ven rápido: ¿son **señal de alarma** o **buena señal**?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Señal de alarma' }, { label: 'Buena señal' }],
           cards: [
             { icon: 'alert', label: 'El auditor da su opinión con salvedades', bin: 0, why: 'El auditor no se queda tranquilo con algo de las cuentas.' },

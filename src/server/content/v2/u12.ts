@@ -108,7 +108,7 @@ export default unit({
         title: '¿Trabajo o participación?',
         intro: 'Dos formas de decidir quién añade el siguiente bloque: **gastando energía** en cálculos o **arriesgando monedas** como garantía. ¿Cuál es cuál?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Prueba de trabajo' }, { label: 'Prueba de participación' }],
           cards: [
             { icon: 'bitcoin', label: 'Bitcoin', bin: 0, why: 'Los mineros compiten gastando energía en cálculos.' },
@@ -156,7 +156,7 @@ export default unit({
         title: '¿Bitcoin o Ethereum?',
         intro: '**Ethereum** (2015) es una blockchain que, además de enviar dinero, ejecuta programas; su moneda es el **ether (ETH)**. ¿Es de Bitcoin o de Ethereum?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Bitcoin' }, { label: 'Ethereum' }],
           cards: [
             { icon: 'coins', label: 'Nunca habrá más de 21 millones', bin: 0, why: 'Es la regla estrella de Bitcoin.' },
@@ -206,7 +206,7 @@ export default unit({
         title: '¿Con reservas o algorítmica?',
         intro: 'Una **stablecoin** intenta valer siempre lo mismo que una moneda, normalmente **1 dólar**, y hay dos formas de intentarlo. ¿Cuál es cada una?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Con reservas' }, { label: 'Algorítmica' }],
           cards: [
             { icon: 'bank', label: 'Guarda dólares y letras del Tesoro por cada token', bin: 0, why: 'Su valor depende de que esas reservas existan y estén disponibles.' },
@@ -242,7 +242,7 @@ export default unit({
         title: '¿Se puede enseñar?',
         intro: 'Acabas de crear tu primera **wallet**, la app que guarda las **claves** de tus criptos. Todos te piden algo: ¿qué puedes enseñar sin problema y qué jamás?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Sin problema' }, { label: 'Jamás' }],
           cards: [
             { icon: 'mail', label: 'Tu dirección pública, para que te paguen', bin: 0, why: 'Es como tu IBAN: sirve para recibir, no para sacar.' },

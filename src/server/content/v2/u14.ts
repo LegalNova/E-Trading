@@ -116,7 +116,7 @@ export default unit({
         title: '¿Qué empuja al euro?',
         intro: 'El dinero busca **rentabilidad y confianza**. ¿Qué suele pasar con el euro frente al dólar en cada caso?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Sube el euro' }, { label: 'Baja el euro' }],
           cards: [
             { icon: 'percent', label: 'El BCE sube tipos y la Fed los baja', bin: 0, why: 'Los depósitos y bonos en euros pasan a pagar más que los de dólares.' },
@@ -202,7 +202,7 @@ export default unit({
         title: '¿Dónde se esconde el dinero?',
         intro: 'Marzo de 2020: la COVID hunde las bolsas y el dinero corre a esconderse en las **divisas refugio**. En un pánico así, ¿cuál suele subir y cuál suele caer?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Suele subir en el pánico' }, { label: 'Suele caer en el pánico' }],
           cards: [
             { icon: 'cash', label: 'Dólar estadounidense', bin: 0, why: 'Es la moneda de reserva mundial y tiene el mayor mercado de bonos.' },

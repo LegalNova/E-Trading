@@ -164,7 +164,7 @@ export default unit({
         title: '¿De dónde sale el dividendo?',
         intro: 'Un dividendo alto no sirve de nada si mañana lo recortan. ¿**Sostenible** o **en peligro**?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Sostenible' }, { label: 'En peligro' }],
           cards: [
             { icon: 'pie', label: 'Reparte la mitad de lo que gana', bin: 0, why: 'Payout del 50 %: reparte y aún reinvierte la otra mitad.' },
@@ -236,7 +236,7 @@ export default unit({
         title: '¿Sube o baja el valor?',
         intro: 'Un DCF es una máquina de hipótesis. Si tocas una pieza, ¿el valor estimado **sube** o **baja**?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'El valor sube' }, { label: 'El valor baja' }],
           cards: [
             { icon: 'percent', label: 'Subes la tasa de descuento del 9 % al 10 %', bin: 1, why: 'Si exiges más, el dinero futuro vale menos hoy.' },

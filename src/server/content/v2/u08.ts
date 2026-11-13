@@ -71,7 +71,7 @@ export default unit({
         title: '¿Cobras el dividendo?',
         intro: 'Desde la **fecha ex-dividendo**, la acción cotiza sin el derecho a ese dividendo. Para cobrarlo, tienes que tenerla **antes**.',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Lo cobras' }, { label: 'No lo cobras' }],
           cards: [
             { icon: 'cart', label: 'Compras dos días antes de la fecha ex-dividendo', bin: 0, why: 'La tienes antes del ex-dividendo: cobras.' },
@@ -169,7 +169,7 @@ export default unit({
         title: '¿Grande o pequeña?',
         intro: '**Capitalización = precio × número de acciones**: lo que vale la empresa en bolsa. Según su tamaño, cambia su perfil.',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Más propio de una grande' }, { label: 'Más propio de una pequeña' }],
           cards: [
             { icon: 'rocket', label: 'Puede multiplicar su tamaño varias veces', bin: 1, why: 'Una empresa de 500 millones puede multiplicarse; una gigante, difícilmente.' },
@@ -240,7 +240,7 @@ export default unit({
         title: '¿Crecimiento o valor?',
         intro: 'Dos estilos: **crecimiento**, pagas hoy por beneficios futuros, y **valor**, compras beneficios actuales con descuento.',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Crecimiento' }, { label: 'Valor' }],
           cards: [
             { icon: 'rocket', label: 'Sus ventas crecen un 40 % al año', bin: 0, why: 'Crece deprisa: el mercado paga hoy por lo que espera mañana.' },
@@ -291,7 +291,7 @@ export default unit({
         title: '¿Dividendo o recompra?',
         intro: 'Las dos devuelven dinero al accionista, pero de forma distinta. ¿Qué va con cada una?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Dividendo' }, { label: 'Recompra' }],
           cards: [
             { icon: 'cash', label: 'Te llega dinero a la cuenta', bin: 0, why: 'El dividendo se cobra en efectivo.' },

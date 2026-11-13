@@ -7,6 +7,7 @@ import { inline, RichText } from '../ui/rich-text'
 import { Lumi, LumiSays } from '../ui/lumi'
 import { Basket, Doubling, Growth, Race, RealRate } from './w-money'
 import { Budget, Emergency, GoalPlan, Leaks, Sort } from './w-budget'
+import { Swipe } from './w-swipe'
 import { Debts, Loan, Revolving } from './w-debt'
 import { Coinflip, Crash, Horizon } from './w-market'
 import { Bond, Book, Dca, Fees, Fx, Guess, Leverage, Mix, Orders, Position, Taxes, Valuation } from './w-more'
@@ -27,7 +28,7 @@ function Avatar({ name }: { name: string }) {
 type OnM = (m: Record<string, number>) => void
 const WIDGETS: { [K in WidgetT['kind']]: (p: { w: Extract<WidgetT, { kind: K }>; onMetrics: OnM }) => React.ReactNode } = {
   basket: Basket, growth: Growth, race: Race, doubling: Doubling, realrate: RealRate,
-  sort: Sort, budget: Budget, leaks: Leaks, emergency: Emergency, goalplan: GoalPlan,
+  sort: Sort, swipe: Swipe, budget: Budget, leaks: Leaks, emergency: Emergency, goalplan: GoalPlan,
   loan: Loan, revolving: Revolving, debts: Debts,
   horizon: Horizon, crash: Crash, coinflip: Coinflip,
   mix: Mix, fees: Fees, bond: Bond, fx: Fx, leverage: Leverage, position: Position, orders: Orders, taxes: Taxes, dca: Dca, guess: Guess, book: Book, valuation: Valuation,

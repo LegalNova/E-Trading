@@ -70,7 +70,7 @@ export default unit({
         title: 'Repasa tu diario',
         intro: 'En cada línea del diario apuntas el motivo, la entrada, el stop, el tamaño, el resultado en R y tu emoción. ¿Seguiste el plan?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Seguí el plan' }, { label: 'Me lo salté' }],
           cards: [
             { icon: 'target', label: 'Entré en el soporte con vela de giro, como dice el plan', bin: 0, why: 'Motivo de entrada según el plan: así se puede medir si el sistema funciona.' },

@@ -126,7 +126,7 @@ export const u29l1 = lesson('u29l1', 'Diversificar: lo único gratis en finanzas
     title: '¿De una empresa o de todas?',
     intro: 'El riesgo **específico** golpea a una empresa concreta. El **de mercado**, a todas a la vez. ¿Cuál es cada uno?',
     widget: {
-      kind: 'sort',
+      kind: 'swipe',
       bins: [{ label: 'Específico: de una empresa' }, { label: 'De mercado: de todas' }],
       cards: [
         { icon: 'alert', label: 'Un fraude contable en una empresa', bin: 0, why: 'Le pasa a una sola: en un índice de miles de empresas, apenas se nota.' },

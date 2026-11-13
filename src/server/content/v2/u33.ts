@@ -78,7 +78,7 @@ export default unit({
         title: '¿Barata o cara?',
         intro: 'Vas a meter **100 €** en un ETF y el bróker cobra **3 € fijos**. ¿Mucho o poco? Depende de lo que compres: ¿se lleva **menos del 1 %** o **un 1 % o más**?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Menos del 1 %' }, { label: 'Un 1 % o más' }],
           cards: [
             { icon: 'receipt', label: '3 € fijos en una compra de 10.000 €', bin: 0, why: 'Un 0,03 %: una ganga.' },
@@ -120,7 +120,7 @@ export default unit({
         title: '¿Cómo gana dinero?',
         intro: 'Un neobróker «sin comisiones» gana dinero de otras formas. ¿Cuáles crecen **cuanto más operas**?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Gana más si operas mucho' }, { label: 'Gana aunque no operes' }],
           cards: [
             { icon: 'exchange', label: 'Spread en cada compraventa', bin: 0, why: 'Cada operación deja un poco por el camino.' },

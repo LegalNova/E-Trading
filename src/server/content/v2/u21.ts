@@ -23,7 +23,7 @@ export default unit({
         title: '¿Suelo o techo, después de romper?',
         intro: 'Un nivel roto no desaparece: **cambia de papel**. Coloca cada caso.',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Nuevo soporte' }, { label: 'Nueva resistencia' }],
           cards: [
             { icon: 'chart', label: 'Una resistencia rota al alza con volumen', bin: 0, why: 'Lo que antes frenaba las subidas ahora suele sostener las caídas.' },
@@ -183,7 +183,7 @@ export default unit({
         title: '¿Confirmada o solo posible?',
         intro: 'Doble techo en forma de **M**, doble suelo en forma de **W**. ¿Cuáles están confirmados?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Confirmada' }, { label: 'Solo posible' }],
           cards: [
             { icon: 'mountain', label: 'Dos máximos parecidos y un cierre por debajo del valle', bin: 0, why: 'El doble techo se confirma al romper el mínimo del valle con un cierre.' },
@@ -284,7 +284,7 @@ export default unit({
         title: 'Filtros contra las rupturas falsas',
         intro: 'Quien compra la rotura y el precio vuelve dentro queda **atrapado**. ¿Qué te protege y qué te mete en la trampa?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Filtra rupturas falsas' }, { label: 'Te mete en la trampa' }],
           cards: [
             { icon: 'clock', label: 'Esperar un cierre al otro lado del nivel', bin: 0, why: 'Un cierre dice mucho más que una mecha de unas horas.' },

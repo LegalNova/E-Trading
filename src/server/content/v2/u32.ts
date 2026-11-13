@@ -120,7 +120,7 @@ export default unit({
         title: '¿Pump o análisis serio?',
         intro: 'Mensajes de grupos de inversión. ¿Huelen a **pump and dump** o a análisis serio?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Huele a pump' }, { label: 'Análisis serio' }],
           cards: [
             { icon: 'clock', label: 'Hora fija para que todos compren a la vez', bin: 0, why: 'Comprar todos a la vez es la definición de manipulación.' },
@@ -170,7 +170,7 @@ export default unit({
         title: '¿Te protege o te expone?',
         intro: 'Siete hábitos. ¿Cuáles te **protegen** del phishing y cuáles te dejan **expuesto**?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Te protege' }, { label: 'Te expone' }],
           cards: [
             { icon: 'shield', label: 'Activar la verificación en dos pasos', bin: 0, why: 'Con ella, una contraseña robada no basta para entrar.' },
@@ -219,7 +219,7 @@ export default unit({
         title: '¿Puede hacerlo?',
         intro: 'Un influencer puede enseñarte mucho, pero hay **líneas rojas**. ¿Qué es legítimo y qué no?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Legítimo' }, { label: 'Línea roja' }],
           cards: [
             { icon: 'study', label: 'Explicar qué es un fondo indexado', bin: 0, why: 'Educar es libre: no necesita autorización.' },

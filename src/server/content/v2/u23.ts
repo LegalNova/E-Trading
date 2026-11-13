@@ -182,7 +182,7 @@ export default unit({
         title: '¿Qué dice la evidencia?',
         intro: 'Entonces, ¿qué partes del análisis técnico superan las pruebas serias?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Con respaldo' }, { label: 'Sin evidencia rigurosa o sin valor tras costes' }],
           cards: [
             { icon: 'up', label: 'Momentum de 3–12 meses', bin: 0, why: 'Jegadeesh y Titman (1993): las tendencias de 3–12 meses han tendido a persistir.' },

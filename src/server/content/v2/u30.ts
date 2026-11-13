@@ -318,7 +318,7 @@ export default unit({
         title: '¿Es motivo para vender?',
         intro: 'Seis situaciones de alguien que invierte a largo plazo. Separa los **motivos de verdad** de los que solo son ruido.',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Puede ser motivo' }, { label: 'No es motivo' }],
           cards: [
             { icon: 'home', label: 'En dos años necesitas el dinero para la entrada de un piso', bin: 0, why: 'El plazo se ha acortado: toca bajar el riesgo poco a poco.' },

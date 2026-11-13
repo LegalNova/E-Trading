@@ -119,7 +119,7 @@ export default unit({
         title: 'Buena lectura o error típico',
         intro: 'El **RSI** va de 0 a 100: por encima de 70, «sobrecompra»; por debajo de 30, «sobreventa». ¿Qué lecturas tienen sentido?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Lectura sensata' }, { label: 'Error típico' }],
           cards: [
             { icon: 'alert', label: 'RSI en 78: vendo, que va a caer', bin: 1, why: 'La sobrecompra no es una señal de venta por sí sola.' },
@@ -168,7 +168,7 @@ export default unit({
         title: '¿Qué dice el MACD?',
         intro: 'El **MACD** mide el impulso con dos medias exponenciales y una línea de señal. Clasifica cada lectura.',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Impulso alcista que mejora' }, { label: 'Impulso que se frena o bajista' }],
           cards: [
             { icon: 'repeat', label: 'El MACD cruza por encima de su línea de señal', bin: 0, why: 'El impulso alcista aumenta.' },
@@ -314,7 +314,7 @@ export default unit({
         title: 'Construye el OBV',
         intro: 'Esta acción ha subido en la semana, pero ¿había compradores detrás? El **OBV** lo mira: suma el volumen de los días que **cierran** al alza y resta el de los que cierran a la baja.',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Suma su volumen' }, { label: 'Resta su volumen' }],
           cards: [
             { icon: 'calendar', label: 'Lunes: cierra por encima del viernes, con 1.000 acciones', bin: 0, why: 'Cierre al alza: suma 1.000.' },

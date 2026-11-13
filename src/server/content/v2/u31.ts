@@ -100,7 +100,7 @@ export default unit({
         title: '¿Es una venta para Hacienda?',
         intro: 'Solo tributa lo que **vendes o cambias**. ¿Esto genera una ganancia o una pérdida este año?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Sí: es una venta' }, { label: 'No tributa todavía' }],
           cards: [
             { icon: 'chart', label: 'Vendes acciones con beneficio', bin: 0, why: 'Ganancia = valor de venta − valor de compra, con las comisiones incluidas.' },
@@ -161,7 +161,7 @@ export default unit({
         title: '¿Se aplica la regla?',
         intro: 'Una pérdida espera si compras **valores homogéneos** (los mismos) en los dos meses anteriores o posteriores a la venta.',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'La pérdida se aplaza' }, { label: 'No se aplica' }],
           cards: [
             { icon: 'calendar', label: 'Vendes un ETF con pérdidas y recompras el mismo 3 semanas después', bin: 0, why: 'Dentro de los dos meses posteriores.' },
@@ -211,7 +211,7 @@ export default unit({
         title: '¿Sin pagar impuestos?',
         intro: 'El traspaso funciona entre **fondos de inversión**. ¿Puedes hacer esto sin tributar ahora?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Sí, por traspaso' }, { label: 'No, tributa' }],
           cards: [
             { icon: 'repeat', label: 'Rebalancear entre dos fondos indexados', bin: 0, why: 'De fondo a fondo: traspaso.' },

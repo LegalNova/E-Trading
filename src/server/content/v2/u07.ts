@@ -21,7 +21,7 @@ export default unit({
         title: '¿Está en el MSCI World?',
         intro: 'El **MSCI World** reúne grandes y medianas empresas de **23 países desarrollados**. ¿Cuáles de estas tiene dentro?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Está dentro' }, { label: 'Fuera: país emergente' }],
           cards: [
             { icon: 'phone', label: 'Apple (EE. UU.)', bin: 0, why: 'EE. UU. es desarrollado y pesa más de dos tercios del índice.' },

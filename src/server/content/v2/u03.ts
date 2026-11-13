@@ -64,7 +64,7 @@ export default unit({
         title: '¿Crea valor o lo destruye?',
         intro: 'No toda deuda es igual. La que **puede tener sentido** paga algo que dura o te genera ingresos, a un interés razonable. La que conviene **evitar** paga algo que se acaba antes que la deuda, y cara.',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Puede tener sentido' }, { label: 'Mejor evitarla' }],
           cards: [
             { icon: 'home', label: 'Hipoteca con cuota asumible y colchón hecho', bin: 0, why: 'El piso dura décadas y el interés suele ser bajo… siempre que puedas pagar la cuota.' },

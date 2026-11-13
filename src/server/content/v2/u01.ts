@@ -122,7 +122,7 @@ export default unit({
         title: 'La inflación que no se mueve tanto',
         intro: 'El INE da dos cifras. El **IPC general** mide toda la cesta. La **inflación subyacente** quita lo que sube y baja muy deprisa (la energía y los alimentos frescos) para ver la tendencia de fondo.',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Cuenta en la subyacente' }, { label: 'Se excluye: muy volátil' }],
           cards: [
             { icon: 'power', label: 'La factura de la luz', bin: 1, why: 'Es energía: puede dispararse un mes y bajar al siguiente.' },

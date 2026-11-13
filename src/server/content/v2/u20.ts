@@ -65,7 +65,7 @@ export default unit({
         title: '¿Fuerza o indecisión?',
         intro: '**Marubozu** es «cabeza rapada» en japonés: cuerpo largo y casi sin mechas. La **peonza** y el **doji**, lo contrario. Clasifícalas.',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Fuerza' }, { label: 'Indecisión' }],
           cards: [
             { icon: 'candles', label: 'Marubozu alcista: abre en el mínimo y cierra en el máximo', bin: 0, why: 'Los compradores mandaron toda la sesión.' },
@@ -193,7 +193,7 @@ export default unit({
         title: '¿Giro alcista o bajista?',
         intro: 'Los patrones de tres velas cuentan una historia completa. ¿Hacia dónde apunta cada uno?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Alcista' }, { label: 'Bajista' }],
           cards: [
             { icon: 'sun', label: 'Estrella de la mañana', bin: 0, why: 'Tras una caída: roja larga, vela pequeña y verde larga.' },
@@ -242,7 +242,7 @@ export default unit({
         title: 'Los cuatro filtros',
         intro: 'Has visto un martillo. ¿Qué le da más credibilidad y qué no?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Suma credibilidad' }, { label: 'No suma' }],
           cards: [
             { icon: 'down', label: 'Llega tras tres meses de caída', bin: 0, why: 'Tendencia previa: un patrón de giro necesita algo que girar.' },

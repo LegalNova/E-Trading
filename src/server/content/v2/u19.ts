@@ -25,7 +25,7 @@ export default unit({
         title: '¿Línea o velas?',
         intro: 'Cada gráfico responde a una pregunta. ¿Cuál usarías para cada cosa?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Línea o área' }, { label: 'Velas o barras' }],
           cards: [
             { icon: 'chart', label: 'Ver cómo ha ido un fondo indexado en 10 años', bin: 0, why: 'Para la tendencia larga, la línea basta y se lee mejor.' },
@@ -161,7 +161,7 @@ export default unit({
         title: '¿Qué escala elegirías?',
         intro: 'En gráficos largos, la escala cambia lo que ves. ¿**Logarítmica** o **da casi igual**?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Logarítmica' }, { label: 'Da casi igual' }],
           cards: [
             { icon: 'chart', label: 'El Nasdaq 100 desde 1985', bin: 0, why: 'Cuatro décadas y precios muy distintos: logarítmica.' },
@@ -271,7 +271,7 @@ export default unit({
         title: '¿Confirma o pone en duda?',
         intro: 'El mismo movimiento de precio, con distinto volumen. ¿El volumen lo **confirma** o lo **pone en duda**?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Lo confirma' }, { label: 'Lo pone en duda' }],
           cards: [
             { icon: 'up', label: 'Sube con el triple de volumen que la media', bin: 0, why: 'Mucha gente detrás de la subida: convicción.' },

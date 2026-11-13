@@ -12,7 +12,7 @@ export default unit({
         title: '¿Foso o no?',
         intro: '¿Por qué sigues en WhatsApp aunque salga una app mejor? Porque están tus amigos: eso es un **foso**, como lo llama Buffett, una ventaja que la competencia no puede copiar.',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Es foso' }, { label: 'No es foso' }],
           cards: [
             { icon: 'pharma', label: 'Un medicamento con patente', bin: 0, why: 'Intangible: nadie puede copiarlo durante años.' },
@@ -62,7 +62,7 @@ export default unit({
         title: '¿Cíclico o defensivo?',
         intro: 'Si mañana te quedaras sin trabajo, seguirías comprando comida, pero aplazarías el viaje de verano. A las empresas les pasa igual en una crisis: clasifica cada negocio.',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Cíclico' }, { label: 'Defensivo' }],
           cards: [
             { icon: 'car', label: 'Fabricante de coches', bin: 0, why: 'Un coche nuevo se aplaza cuando vienen mal dadas.' },
@@ -155,7 +155,7 @@ export default unit({
         title: '¿Quién sufre más?',
         intro: 'Suben los tipos de interés. ¿Quién lo nota más?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Sufre más' }, { label: 'Sufre menos' }],
           cards: [
             { icon: 'rocket', label: 'Tecnológica joven sin beneficios', bin: 0, why: 'Su valor está en beneficios lejanos, que se descuentan más.' },
@@ -311,7 +311,7 @@ export default unit({
         title: 'Señales de alarma',
         intro: 'Los números a veces avisan antes que los titulares. ¿**Buena señal** o **alarma**?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Buena señal' }, { label: 'Alarma' }],
           cards: [
             { icon: 'cash', label: 'La caja libre va en línea con el beneficio', bin: 0, why: 'El beneficio se convierte en dinero de verdad.' },

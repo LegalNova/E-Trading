@@ -75,7 +75,7 @@ export default unit({
         title: '¿Quién guarda tus criptos?',
         intro: 'Cuando dejas tus criptos en una plataforma, dependes de que sea **solvente y honrada**. ¿Esto reduce ese riesgo o lo aumenta?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Lo reduce' }, { label: 'Lo aumenta' }],
           cards: [
             { icon: 'verified', label: 'Plataforma autorizada bajo MiCA', bin: 0, why: 'MiCA exige a las plataformas estar autorizadas y separar los activos de los clientes.' },

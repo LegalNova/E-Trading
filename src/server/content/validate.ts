@@ -202,6 +202,7 @@ const METRICS: Record<string, string[]> = {
   doubling: ['rate', 'years', 'rule', 'doublings40'],
   realrate: ['nominal', 'inflation', 'real', 'value', 'balance'],
   sort: ['done', 'cards', 'correct', 'wrong', 'net'],
+  swipe: ['done', 'cards', 'correct', 'wrong'],
   budget: ['needsPct', 'wantsPct', 'savePct', 'offTarget', 'left'],
   leaks: ['yearly', 'cut', 'invested', 'on'],
   emergency: ['save', 'played', 'fund', 'debt', 'covered'],
@@ -241,7 +242,7 @@ function checkPlay(id: string, p: Extract<Step, { kind: 'PLAY' }>['play']): stri
   }
   // Iconos del catálogo (nada de emojis en la interfaz)
   JSON.stringify(p.widget, (k, x) => (k === 'icon' && typeof x === 'string' && !(GLYPHS as readonly string[]).includes(x) && e.push(`${id}: icono «${x}» no existe (src/shared/glyphs.ts)`), x))
-  if (p.widget.kind === 'sort' && p.widget.cards.some(c => c.bin < 0 || c.bin >= (p.widget as { bins: unknown[] }).bins.length)) e.push(`${id}: tarjeta con grupo fuera de rango`)
+  if ((p.widget.kind === 'sort' || p.widget.kind === 'swipe') && p.widget.cards.some(c => c.bin < 0 || c.bin >= (p.widget as { bins: unknown[] }).bins.length)) e.push(`${id}: tarjeta con grupo fuera de rango`)
   return e
 }
 /** Historia: cada personaje que habla existe, y cada elección tiene una opción buena y consecuencias */

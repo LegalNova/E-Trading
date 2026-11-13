@@ -69,7 +69,7 @@ export default unit({
         title: '¿Obligación o derecho?',
         intro: 'Una **opción** da el derecho, pero no la obligación, de comprar (**call**) o vender (**put**) a un precio pactado, el **strike**. Por ese derecho se paga una **prima**.',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Tiene una obligación' }, { label: 'Solo tiene un derecho' }],
           cards: [
             { icon: 'document', label: 'Quien compra un futuro', bin: 0, why: 'En un futuro, las dos partes están obligadas a cumplir.' },
@@ -90,7 +90,7 @@ export default unit({
         title: 'Tu call, al vencimiento',
         intro: 'Compras una **call** con strike de **100 €** y pagas **5 €** de prima. Al vencimiento, ¿ganas o pierdes?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Ganas' }, { label: 'Pierdes' }],
           cards: [
             { icon: 'up', label: 'La acción acaba a 130 €', bin: 0, why: 'Compras a 100 € algo que vale 130 €: 30 € menos 5 € de prima, ganas 25 €.' },
@@ -183,7 +183,7 @@ export default unit({
         title: 'La letra pequeña',
         intro: 'Lo que aportas a un **plan de pensiones** reduce tu IRPF de hoy, pero tiene letra pequeña. ¿Ventaja o inconveniente?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Ventaja' }, { label: 'Inconveniente' }],
           cards: [
             { icon: 'percent', label: 'Reduce tu IRPF el año en que aportas', bin: 0, why: 'Hasta 1.500 € al año en un plan individual.' },

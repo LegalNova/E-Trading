@@ -110,7 +110,7 @@ export default unit({
         title: '¿Acc o Dist?',
         intro: 'Dos versiones del mismo fondo, con las **mismas empresas** dentro: solo cambia qué se hace con los dividendos. ¿De cuál es cada rasgo?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Acumulación (Acc)' }, { label: 'Distribución (Dist)' }],
           cards: [
             { icon: 'cash', label: 'Te ingresa dinero cada trimestre', bin: 1, why: 'El de distribución te paga los dividendos, normalmente cada trimestre o semestre.' },
@@ -158,7 +158,7 @@ export default unit({
         title: '¿Física o sintética?',
         intro: 'Dos formas de copiar un índice: **comprar** lo que hay dentro o que un banco te **pague** lo que haga. ¿Cuál es cuál?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Réplica física' }, { label: 'Réplica sintética' }],
           cards: [
             { icon: 'cart', label: 'Compra las acciones del índice', bin: 0, why: 'Tiene dentro lo mismo que el índice, con su peso.' },
@@ -207,7 +207,7 @@ export default unit({
         title: '¿Está en el KID?',
         intro: 'Todo fondo o ETF que se vende a minoristas en la UE tiene un **KID**: como máximo 3 páginas, siempre con las mismas secciones. ¿Qué encontrarás?',
         widget: {
-          kind: 'sort',
+          kind: 'swipe',
           bins: [{ label: 'Está en el KID' }, { label: 'No está' }],
           cards: [
             { icon: 'receipt', label: 'Los costes', bin: 0, why: 'Siempre: lo que pagas cada año y el resto de costes.' },
